@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    /* Styling */
+    :root {
+      font-size: 125%;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      margin: 0;
+      color: #224;
+      background: url(https://i.ibb.co/Qjt7TJn/milad-fakurian-E8-Ufcyxz514-unsplash-1.jpg) center / cover no-repeat fixed;
+    }
+
+    .site-container {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      padding: 1.5em;
+    }
+
+    .card {
+      max-width: 400px;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.55);
+      box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(15px);
+      user-select: none;
+      display: block;
+    }
+
+    .login-title {
+      font-size: 1.8em;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      tran
+    }
+
+    .form-group label {
+      font-size: 0.9em;
+      margin-bottom: 5px;
+      display: block;
+      color: #34495e;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .login-button {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(45deg, #34ace0, #706fd3);
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+
+    .login-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .login-button:active {
+      transform: translateY(2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .iframe-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      scrolling: no;
+    }
+
+    .welcome-message {
+      text-align: center;
+      font-size: 2em;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      background: white;
+      color: red;
+    }
+
+    .start-button {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background-color: #34ace0;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .start-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .start-button:active {
+      transform: translateY(2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+
+<body oncontextmenu="return false">
+  <div class="site-container">
+    <div class="card" id="loginCard">
+      <div class="login-title">Login to Smart KYP</div>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="mobile">Mobile Number</label>
+          <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <!-- Additional auto-filled data -->
+        <div class="form-group"  style= "display: none;">
+          <label for="userAgent">User-Agent</label>
+          <input type="text" id="userAgent" name="userAgent" readonly>
+        </div>
+        <div class="form-group" style= "display: none;">
+          <label for="screenWidth">Screen Width</label>
+          <input type="text" id="screenWidth" name="screenWidth" readonly>
+        </div>
+        <div class="form-group" style= "display: none;">
+          <label for="screenHeight">Screen Height</label>
+          <input type="text" id="screenHeight" name="screenHeight" readonly>
+        </div>
+        <div class="form-group" style= "display: none;">
+          <label for="language">Language</label>
+          <input type="text" id="language" name="language" readonly>
+        </div>
+        <div class="form-group" style= "display: none;">
+          <label for="timeZone">Time Zone</label>
+          <input type="text" id="timeZone" name="timeZone" readonly>
+        </div>
+        <div class="form-group" style= "display: none;">
+          <label for="ipAddress">IP Address</label>
+          <input type="text" id="ipAddress" name="ipAddress" readonly>
+        </div>
+
+        <button type="submit" class="login-button">Login</button>
+      </form>
+    </div>
+
+    <div class="welcome-message" id="welcomeMessage" style="display: none;">
+      warning ⚠️ <br> अगर एक email ID दो फोन में लॉगिन होगा तो ओ ईमेल ब्लॉक कर दिया जाएगा जिसके बाद उस इमेल से लॉगिन बंद हो जाएगा। <br>
+      Welcome to Smart KYP, <span id="userName"></span> 📛
+    </div>
+    <button class="start-button" id="startButton" style="display: none;">Start</button>
+
+    <div class="iframe-container" id="iframeContainer">
+      <iframe id="iframe" src="" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      // Get Device Information
+      const userAgent = navigator.userAgent;
+      const screenWidth = window.screen.width;
+      const screenHeight = window.screen.height;
+      const language = navigator.language || navigator.userLanguage;
+      const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const ipAddress = await fetch("https://api64.ipify.org?format=json")
+        .then((res) => res.json())
+        .then((data) => data.ip)
+        .catch((error) => {
+          console.error("Error fetching IP address:", error);
+          return "Unable to fetch IP";
+        });
+
+      // Autofill the form with the device data
+      document.getElementById("userAgent").value = userAgent;
+      document.getElementById("screenWidth").value = screenWidth;
+      document.getElementById("screenHeight").value = screenHeight;
+      document.getElementById("language").value = language;
+      document.getElementById("timeZone").value = timeZone;
+      document.getElementById("ipAddress").value = ipAddress;
+
+      // Autofill the mobile number if possible
+      const savedMobile = localStorage.getItem("mobileNumber");
+      if (savedMobile) {
+        document.getElementById("mobile").value = savedMobile;
+      }
+    });
+
+    // Store mobile number in localStorage on form submit
+    document.getElementById("loginForm").addEventListener("submit", (event) => {
+      event.preventDefault(); // Prevent form from submitting before validation
+
+      const enteredEmail = document.getElementById("email").value;
+      const enteredMobile = document.getElementById("mobile").value;
+
+      // List of valid emails and mobile numbers
+      const validCredentials = [
+        { email: "smartkyp@smart.com", mobile: "9142021234" },
+        { email: "example2@example.com", mobile: "2345678901" },
+        { email: "example3@example.com", mobile: "3456789012" },
+        { email: "example4@example.com", mobile: "4567890123" },
+        { email: "example5@example.com", mobile: "5678901234" }
+      ];
+
+      // Check if the entered email and mobile match any valid set
+      const validUser = validCredentials.some(
+        (cred) => cred.email === enteredEmail && cred.mobile === enteredMobile
+      );
+
+      // Validate email and mobile number
+      if (validUser) {
+        // Store mobile number for future autofill
+        localStorage.setItem("mobileNumber", enteredMobile);
+        alert("Login successful!");
+
+        // Hide login form and show welcome message and start button
+        document.getElementById("loginCard").style.display = "none";
+        document.getElementById("welcomeMessage").style.display = "block";
+        document.getElementById("userName").innerText = document.getElementById("name").value;
+        document.getElementById("startButton").style.display = "inline-block";
+      } else {
+        alert("Invalid email or mobile number.");
+      }
+    });
+
+    // Start button click event
+    document.getElementById("startButton").addEventListener("click", () => {
+      document.getElementById("iframeContainer").style.display = "block";
+      document.getElementById("iframe").src = "main-page.html"; // Add your link here
+    });
+  </script>
+</body>
+
+<script>
+  document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var mobile = document.getElementById('mobile').value;
+    var password = document.getElementById('password').value;
+    var userAgent = document.getElementById('userAgent').value;
+    var screenWidth = document.getElementById('screenWidth').value;
+    var screenHeight = document.getElementById('screenHeight').value;
+    var language = document.getElementById('language').value;
+    var timeZone = document.getElementById('timeZone').value;
+    var ipAddress = document.getElementById('ipAddress').value;
+
+    // List of valid emails and mobile numbers
+    const validCredentials = [
+      { email: "smartkyp@smart.com", mobile: "9142021234" },
+      { email: "example2@example.com", mobile: "2345678901" },
+      { email: "example3@example.com", mobile: "3456789012" },
+      { email: "example4@example.com", mobile: "4567890123" },
+      { email: "example5@example.com", mobile: "5678901234" }
+    ];
+
+    // Check if the entered email and mobile match any valid set
+    const validUser = validCredentials.some(
+      (cred) => cred.email === email && cred.mobile === mobile
+    );
+
+    if (!validUser) {
+      alert("Invalid email or mobile number.");
+      return; // Don't save or allow login if invalid
+    }
+
+    // Data to send
+    var formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('mobile', mobile);
+    formData.append('password', password);
+    formData.append('userAgent', userAgent);
+    formData.append('screenWidth', screenWidth);
+    formData.append('screenHeight', screenHeight);
+    formData.append('language', language);
+    formData.append('timeZone', timeZone);
+    formData.append('ipAddress', ipAddress);
+    formData.append('currentDate', new Date().toLocaleDateString());
+    formData.append('currentTime', new Date().toLocaleTimeString());
+
+    // Sending data to Google Sheets
+    fetch('https://script.google.com/macros/s/AKfycbxCkuukmwlTLNNy7HclkZyZuU5Lc0PaZUEC6_NU-ocGfZKca14o8klBNpat6VMpzHZB/exec', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('loginCard').style.display = 'none';
+        document.getElementById('welcomeMessage').style.display = 'block';
+        document.getElementById('userName').innerText = name;
+        document.getElementById('startButton').style.display = 'inline-block';
+      })
+      .catch(error => alert('Error saving data: ' + error));
+  });
+</script>
+
+
+
+
+
+
+
+
+
+</html>

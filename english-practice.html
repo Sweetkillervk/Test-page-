@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Kyp Quiz</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJxnGf4F9QgIDOq2R8D7e+ht6nH6Xy5g1E8v9uqlVs62zGLngtFdJ6GbL3rD" crossorigin="anonymous">
+
+  <style>
+    /* Custom Styles */
+    body {
+      background: url('allbk.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      margin: 0;
+      text-align: center;
+      padding-top: 80px; /* Space for fixed header */
+      padding-bottom: 60px; /* Space for fixed footer */
+    }
+
+    /* Header Styles */
+    header {
+      background-color: rgba(45, 55, 72, 0.8);
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #fff;
+      font-size: 32px;
+    }
+
+    /* Level Buttons Container */
+    #level-buttons {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 120px; /* Adjusted for header space */
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: rgba(45, 55, 72, 0.8);
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    footer p {
+      color: #fff;
+      margin: 0;
+    }
+
+    /* Main Content Styles */
+    .quiz-container {
+      background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+      backdrop-filter: blur(10px); /* Applies blur effect to the background */
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin: 20px;
+      color: #000;
+      font-weight: bolder;
+      margin-top: 120px; /* Adjusted for header space */
+    }
+
+    /* Button Styles */
+    .button {
+      background-color: #4299e1;
+      color: white;
+      border-radius: 30px;
+      padding: 12px 25px;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+    .button:hover {
+      background-color: #3182ce;
+      transform: scale(1.05);
+    }
+
+    .button:active {
+      background-color: #2b6cb0;
+    }
+
+    /* Question and Answer Styles */
+    #question {
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    li {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    /* Home Button */
+    #home {
+      margin-top: 20px;
+      background-color: #f56565;
+    }
+
+    #home:hover {
+      background-color: #e53e3e;
+    }
+
+    /* Score Display */
+    #score-display {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    /* Next Level Button */
+    #next-level {
+      margin-top: 20px;
+      background-color: #68d391;
+    }
+
+    #next-level:hover {
+      background-color: #48bb78;
+    }
+    
+    
+    
+    .back-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      border-radius: 25px;
+      position: fixed; /* Fixed position */
+      top: 10px; /* Top-left corner */
+      left: 10px;
+      z-index: 999999999; /* Keeps it above other elements */
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .back-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateX(-100%);
+      transition: transform 0.4s ease;
+    }
+
+    .back-button:hover::before {
+      transform: translateX(0);
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .back-button span {
+      margin-left: 8px;
+      transition: margin-left 0.3s ease;
+    }
+
+    .back-button:hover span {
+      margin-left: 16px;
+    }
+
+    .back-button i {
+      font-size: 20px;
+    }
+  </style>
+    
+    
+    
+  </style>
+</head>
+
+<body>
+  
+  
+  
+  <a href="main-page.html" class="back-button">
+    <i>&larr;</i>
+    <span>Go Back</span>
+  </a>
+  
+  
+  
+  <!-- Header -->
+  <header>
+  <h1>Welcome to Smart Kyp <br /> Learn English in an easy way✍️</h1>
+  <div id="total-score" style="margin-top: 10px; font-size: 18px; color: #f5f5f5;">
+    <!-- Total score will be displayed here -->
+  </div>
+</header>
+
+<script>
+  // Function to calculate and display the total score
+  function displayTotalScore() {
+    const scores = JSON.parse(localStorage.getItem("quizScores")) || [];
+    const totalScore = scores.reduce((acc, score) => acc + score, 0); // Sum up all scores
+    document.getElementById("total-score").textContent = `Total Score: ${totalScore}`;
+  }
+
+  // Call the function to display the total score when the page loads
+  displayTotalScore();
+</script>
+  
+  
+  
+  
+  
+  
+  <!-- Level Buttons -->
+<div id="level-buttons" class="mb-6">
+  <a href="#" class="button" data-level="1">Level 1</a>
+  <a href="#" class="button" data-level="2">Level 2</a>
+  <a href="#" class="button" data-level="3">Level 3</a>
+  <a href="#" class="button" data-level="4">Level 4</a>
+  <a href="#" class="button" data-level="5">Level 5</a>
+  <a href="#" class="button" data-level="6">Level 6</a>
+  <a href="#" class="button" data-level="7">Level 7</a>
+  <a href="#" class="button" data-level="8">Level 8</a>
+  <a href="#" class="button" data-level="9">Level 9</a>
+  <a href="#" class="button" data-level="10">Level 10</a>
+  <a href="#" class="button" data-level="11">Level 11</a>
+  <a href="#" class="button" data-level="12">Level 12</a>
+  <a href="#" class="button" data-level="13">Level 13</a>
+  <a href="#" class="button" data-level="14">Level 14</a>
+  <a href="#" class="button" data-level="15">Level 15</a>
+  <a href="#" class="button" data-level="16">Level 16</a>
+  <a href="#" class="button" data-level="17">Level 17</a>
+  <a href="#" class="button" data-level="18">Level 18</a>
+  <a href="#" class="button" data-level="19">Level 19</a>
+  <a href="#" class="button" data-level="20">Level 20</a>
+  <a href="#" class="button" data-level="21">Level 21</a>
+  <a href="#" class="button" data-level="22">Level 22</a>
+  <a href="#" class="button" data-level="23">Level 23</a>
+  <a href="#" class="button" data-level="24">Level 24</a>
+  <a href="#" class="button" data-level="25">Level 25</a>
+  <a href="#" class="button" data-level="26">Level 26</a>
+  <a href="#" class="button" data-level="27">Level 27</a>
+  <a href="#" class="button" data-level="28">Level 28</a>
+  <a href="#" class="button" data-level="29">Level 29</a>
+  <a href="#" class="button" data-level="30">Level 30</a>
+  <a href="#" class="button" data-level="31">Level 31</a>
+  <a href="#" class="button" data-level="32">Level 32</a>
+  <a href="#" class="button" data-level="33">Level 33</a>
+  <a href="#" class="button" data-level="34">Level 34</a>
+  <a href="#" class="button" data-level="35">Level 35</a>
+  <a href="#" class="button" data-level="36">Level 36</a>
+  <a href="#" class="button" data-level="37">Level 37</a>
+  <a href="#" class="button" data-level="38">Level 38</a>
+  <a href="#" class="button" data-level="39">Level 39</a>
+  <a href="#" class="button" data-level="40">Level 40</a>
+  <a href="#" class="button" data-level="41">Level 41</a>
+  <a href="#" class="button" data-level="42">Level 42</a>
+  <a href="#" class="button" data-level="43">Level 43</a>
+  <a href="#" class="button" data-level="44">Level 44</a>
+  <a href="#" class="button" data-level="45">Level 45</a>
+  <a href="#" class="button" data-level="46">Level 46</a>
+  <a href="#" class="button" data-level="47">Level 47</a>
+  <a href="#" class="button" data-level="48">Level 48</a>
+  <a href="#" class="button" data-level="49">Level 49</a>
+  <a href="#" class="button" data-level="50">Level 50</a>
+</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- Quiz Container -->
+  <div id="quiz-container" class="quiz-container" style="display: none;">
+    <div class="quiz-header">
+      <h2 id="question">Question will appear here</h2>
+      <ul id="answers-list">
+        <li><input type="radio" name="answer" id="a"><label for="a" id="a_text">Answer A</label></li>
+        <li><input type="radio" name="answer" id="b"><label for="b" id="b_text">Answer B</label></li>
+        <li><input type="radio" name="answer" id="c"><label for="c" id="c_text">Answer C</label></li>
+        <li><input type="radio" name="answer" id="d"><label for="d" id="d_text">Answer D</label></li>
+      </ul>
+    </div>
+    <button id="submit" class="button">Submit</button>
+  </div>
+
+  <!-- Score Display -->
+  <div id="score-display" style="display: none;"></div>
+
+  <!-- Next Level Button -->
+  <button id="next-level" class="button" style="display: none;">Next Level</button>
+
+  <!-- Home Button -->
+  <button id="home" class="button" style="display: none;">Home</button>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Smart Kyp. All rights reserved.</p>
+  </footer>
+
+  
+  
+  
+  <script src="level1.js"></script>
+<script src="level2.js"></script>
+<script src="level3.js"></script>
+<script src="level4.js"></script>
+<script src="level5.js"></script>
+<script src="level6.js"></script>
+<script src="level7.js"></script>
+<script src="level8.js"></script>
+<script src="level9.js"></script>
+<script src="level10.js"></script>
+<script src="level11.js"></script>
+<script src="level12.js"></script>
+<script src="level13.js"></script>
+<script src="level14.js"></script>
+<script src="level15.js"></script>
+<script src="level16.js"></script>
+<script src="level17.js"></script>
+<script src="level18.js"></script>
+<script src="level19.js"></script>
+<script src="level20.js"></script>
+<script src="level21.js"></script>
+<script src="level22.js"></script>
+<script src="level23.js"></script>
+<script src="level24.js"></script>
+<script src="level25.js"></script>
+<script src="level26.js"></script>
+<script src="level27.js"></script>
+<script src="level28.js"></script>
+<script src="level29.js"></script>
+<script src="level30.js"></script>
+<script src="level31.js"></script>
+<script src="level32.js"></script>
+<script src="level33.js"></script>
+<script src="level34.js"></script>
+<script src="level35.js"></script>
+<script src="level36.js"></script>
+<script src="level37.js"></script>
+<script src="level38.js"></script>
+<script src="level39.js"></script>
+<script src="level40.js"></script>
+<script src="level41.js"></script>
+<script src="level42.js"></script>
+<script src="level43.js"></script>
+<script src="level44.js"></script>
+<script src="level45.js"></script>
+<script src="level46.js"></script>
+<script src="level47.js"></script>
+<script src="level48.js"></script>
+<script src="level49.js"></script>
+<script src="level50.js"></script>
+  
+  
+  
+  
+  
+  
+  
+  <script>
+    let currentQuestionIndex = 0;
+    let currentLevel = 1;
+    let currentScore = 0;
+
+    // Load saved scores from localStorage
+    const savedScores = JSON.parse(localStorage.getItem("quizScores")) || [];
+
+    // Update button text with saved score if available
+    document.querySelectorAll('.button[data-level]').forEach(button => {
+      const level = button.getAttribute('data-level');
+      if (savedScores[level - 1] !== undefined) {
+        button.textContent = `Level ${level} - Score: ${savedScores[level - 1]}`;
+      }
+    });
+
+    // Handle Level Button Clicks
+    document.querySelectorAll('.button[data-level]').forEach(button => {
+      button.addEventListener('click', (e) => {
+        currentLevel = parseInt(e.target.getAttribute('data-level'));
+        startQuiz(currentLevel);
+      });
+    });
+
+    // Start Quiz Function
+    function startQuiz(level) {
+      document.getElementById('level-buttons').style.display = 'none';
+      document.getElementById('quiz-container').style.display = 'block';
+      document.getElementById('home').style.display = 'inline-block';
+      currentScore = 0; // Reset score
+      loadQuestion(level, currentQuestionIndex);
+    }
+
+    // Load Question Function
+    function loadQuestion(level, index) {
+      const questions = getQuestionsForLevel(level);
+      const quiz = questions[index];
+      document.getElementById('question').textContent = quiz.question;
+      document.getElementById('a_text').textContent = quiz.options[0];
+      document.getElementById('b_text').textContent = quiz.options[1];
+      document.getElementById('c_text').textContent = quiz.options[2];
+      document.getElementById('d_text').textContent = quiz.options[3];
+    }
+
+    
+    
+    
+    
+    
+    
+    // Get Questions for Current Level
+function getQuestionsForLevel(level) {
+  if (level === 1) return level1Questions;
+  if (level === 2) return level2Questions;
+  if (level === 3) return level3Questions;
+  if (level === 4) return level4Questions;
+  if (level === 5) return level5Questions;
+  if (level === 6) return level6Questions;
+  if (level === 7) return level7Questions;
+  if (level === 8) return level8Questions;
+  if (level === 9) return level9Questions;
+  if (level === 10) return level10Questions;
+  if (level === 11) return level11Questions;
+  if (level === 12) return level12Questions;
+  if (level === 13) return level13Questions;
+  if (level === 14) return level14Questions;
+  if (level === 15) return level15Questions;
+  if (level === 16) return level16Questions;
+  if (level === 17) return level17Questions;
+  if (level === 18) return level18Questions;
+  if (level === 19) return level19Questions;
+  if (level === 20) return level20Questions;
+  if (level === 21) return level21Questions;
+  if (level === 22) return level22Questions;
+  if (level === 23) return level23Questions;
+  if (level === 24) return level24Questions;
+  if (level === 25) return level25Questions;
+  if (level === 26) return level26Questions;
+  if (level === 27) return level27Questions;
+  if (level === 28) return level28Questions;
+  if (level === 29) return level29Questions;
+  if (level === 30) return level30Questions;
+  if (level === 31) return level31Questions;
+  if (level === 32) return level32Questions;
+  if (level === 33) return level33Questions;
+  if (level === 34) return level34Questions;
+  if (level === 35) return level35Questions;
+  if (level === 36) return level36Questions;
+  if (level === 37) return level37Questions;
+  if (level === 38) return level38Questions;
+  if (level === 39) return level39Questions;
+  if (level === 40) return level40Questions;
+  if (level === 41) return level41Questions;
+  if (level === 42) return level42Questions;
+  if (level === 43) return level43Questions;
+  if (level === 44) return level44Questions;
+  if (level === 45) return level45Questions;
+  if (level === 46) return level46Questions;
+  if (level === 47) return level47Questions;
+  if (level === 48) return level48Questions;
+  if (level === 49) return level49Questions;
+  return level50Questions;
+}
+    
+    
+    
+    
+    
+    
+    
+
+    // Home Button Action
+    document.getElementById('home').addEventListener('click', () => {
+      document.getElementById('quiz-container').style.display = 'none';
+      document.getElementById('level-buttons').style.display = 'grid';
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('score-display').style.display = 'none';
+      document.getElementById('next-level').style.display = 'none';
+    });
+
+    // Submit Button Action
+    document.getElementById('submit').addEventListener('click', () => {
+      const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+      if (selectedAnswer) {
+        const answerText = selectedAnswer.nextElementSibling.textContent;
+        const correctAnswer = getQuestionsForLevel(currentLevel)[currentQuestionIndex].options[getQuestionsForLevel(currentLevel)[currentQuestionIndex].correct];
+
+        if (answerText === correctAnswer) {
+          currentScore++;
+          alert('Correct Answer!');
+        } else {
+          alert('Incorrect Answer. The correct answer is: ' + correctAnswer);
+        }
+
+        // Move to next question or finish quiz
+        currentQuestionIndex++;
+        if (currentQuestionIndex < getQuestionsForLevel(currentLevel).length) {
+          loadQuestion(currentLevel, currentQuestionIndex);
+        } else {
+          // Show score and next level button
+          alert('Quiz Finished!');
+          document.querySelector(`.button[data-level="${currentLevel}"]`).textContent = `Level ${currentLevel} - Score: ${currentScore}`;
+          savedScores[currentLevel - 1] = currentScore;
+          localStorage.setItem("quizScores", JSON.stringify(savedScores));
+          document.getElementById('score-display').textContent = `Your Score: ${currentScore}`;
+          document.getElementById('score-display').style.display = 'block';
+          document.getElementById('next-level').style.display = 'inline-block';
+          currentQuestionIndex = 0;
+        }
+      } else {
+        alert('Please select an answer');
+      }
+    });
+
+    // Next Level Button Action
+    document.getElementById('next-level').addEventListener('click', () => {
+      if (currentLevel < 6) {
+        currentLevel++;
+        startQuiz(currentLevel);
+        document.getElementById('score-display').style.display = 'none';
+        document.getElementById('next-level').style.display = 'none';
+      } else {
+        alert('Congratulations! You have completed all levels.');
+      }
+    });
+  </script>
+</body>
+<script>// Disable text selection
+document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+});
+
+// Disable right-click
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+// Disable drag events (to prevent dragging content)
+document.addEventListener('dragstart', function(e) {
+    e.preventDefault();
+});</script>
+
+</html>
