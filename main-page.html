@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Kyp</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      color: white;
+      background: url('allbk.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      background-color: #3b82f6;
+      transition: all 0.15s ease-in-out;
+      text-decoration: none;
+    }
+
+    .button span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .button.w-40 {
+      width: 10rem;
+    }
+
+    .button.h-16 {
+      height: 4rem;
+    }
+
+    .button.rounded-lg {
+      border-radius: 0.5rem;
+    }
+
+    .button.rounded-full {
+      border-radius: 50%;
+    }
+
+    .button.active:active {
+      transform: translateY(0.125rem);
+      box-shadow: 0 0px 0 0 #1b6ff8, 0 0px 0 0 #1b70f841;
+      border-bottom-width: 0;
+    }
+
+    .button.transition-all {
+      box-shadow: 0 10px 0 0 #1b6ff8, 0 15px 0 0 #1b70f841;
+      border-bottom: 1px solid #3b82f6;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+    }
+
+    .button.active.border-blue-400 {
+      border-color: #2563eb;
+    }
+
+    /* Grid Layout */
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Two columns */
+      gap: 1rem;
+      justify-items: center;
+      align-items: center;
+    }
+
+    /* For different button rows */
+    .row {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    /* Full-Screen Iframe Container */
+    #iframeContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Loading spinner */
+    .loading {
+      display: none;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center text-white">
+
+  <!-- Sticky Header -->
+  <header class="bg-blue-600 py-4 shadow-md w-full fixed top-0 z-10">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl font-bold uppercase">Smart Kyp</h1>
+      <p class="text-lg mt-1">An Interactive Platform</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex flex-col items-center justify-center flex-grow gap-6 mt-24 mb-16">
+    <!-- Row 1: 50% Round Buttons -->
+    <div class="grid-container">
+      <a href="#" class="button w-40 h-16 bg-blue-500 rounded-full active transition-all" data-url="https://smartkyp.blogspot.com/"><span>Official Website 🌐</span></a>
+      <a href="#" class="button w-40 h-16 bg-blue-500 rounded-full active transition-all" data-url="https://docs.google.com/forms/d/e/1FAIpQLSdHThgWrqpJgNaEH11fOX18OPmTc-XR_OCDJkXNYj8ZzHEKNg/viewform?usp=header"><span>Registration 🪩</span></a>
+    </div>
+
+    <!-- Row 2: CIT-ANSWER -->
+    <div class="row">
+      <a href="#" class="button w-40 h-16 bg-blue-500 rounded-lg active transition-all" data-url="cit-exam-answer-srep.html"><span>CIT-ANSWER 💻</span></a>
+      <a href="#" class="button w-40 h-16 bg-blue-500 rounded-lg active transition-all" data-url="cit-exam.html"><span>CIT-PRACTICE 💻</span></a>
+    </div>
+
+    <!-- Row 3: CLS-ANSWER and CLS-PRACTICE -->
+    <div class="row">
+      <a href="#" class="button w-40 h-16 bg-blue-500 rounded-lg active transition-all" data-url="cls-answer.html"><span>CLS-ANSWER 🪩</span></a>
+      <a href="#" class="button w-40 h-16 bg-blue-500 rounded-lg active transition-all" data-url="cls-exam-practice.html"><span>CLS-PRACTICE 🪩</span></a>
+    </div>
+
+    <!-- Row 4: More buttons -->
+    <div class="row">
+      <a href="#" class="button w-40 h-16 bg-blue-500 rounded-lg active transition-all" data-url="css-answer.html"><span>CSS-ANSWER 🎤</span></a>
+      <a href="#" class="button w-40 h-16 bg-blue-500 rounded-lg active transition-all" 
+      data-url="css-exam-practice.html"><span>CSS-PRACTICE 🎤</span></a>
+    </div>
+
+    <!-- Row 5: Active buttons -->
+    <div class="row">
+      <a href="#" class="button w-40 h-16 bg-blue-500 rounded-lg active transition-all" data-url="https://example.com"><span>English</span></a>
+      <a href="#" class="button w-40 h-16 bg-blue-500 rounded-lg active transition-all"
+      data-url="english-login.html"><span>Learn English ✍️</span></a>
+    </div>
+
+    <!-- Row 6: Special button -->
+    <div class="row">
+      <a href="#" class="button w-16 h-16 bg-blue-500 rounded-full active transition-all" data-url="https://example.net"><span>🪩</span></a>
+    </div>
+  </main>
+
+  <!-- Sticky Footer -->
+  <footer class="bg-blue-600 py-4 w-full fixed bottom-0 z-10">
+    <div class="container mx-auto text-center">
+      <p class="text-sm">&copy; 2025 Smart Kyp. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Full-Screen Iframe Container -->
+  <div id="iframeContainer">
+    <div class="loading">Loading...</div>
+    <iframe id="iframeContent" src=""></iframe>
+  </div>
+
+  <script>
+    // Handle button clicks and open links in the iframe
+    document.querySelectorAll('a[data-url]').forEach(button => {
+      button.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+
+        const url = this.getAttribute('data-url');
+        const iframeContainer = document.getElementById('iframeContainer');
+        const iframeContent = document.getElementById('iframeContent');
+        const loading = document.querySelector('.loading');
+
+        // Show the loading spinner
+        loading.style.display = 'block';
+        iframeContainer.style.display = 'flex'; // Show the iframe container
+
+        // Load the URL in the iframe
+        setTimeout(() => {
+          iframeContent.src = url;
+          loading.style.display = 'none'; // Hide loading spinner after loading
+        }, 500);
+      });
+    });
+  </script>
+
+</body>
+
+<script>
+  // Disable text selection
+  document.addEventListener('selectstart', function(e) {
+      e.preventDefault();
+  });
+
+  // Disable right-click
+  document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+  });
+
+  // Disable drag events (to prevent dragging content)
+  document.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+  });
+  
+</script>
+</html>
