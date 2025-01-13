@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Search</title>
+</head>
+
+<style>
+  :root {
+    font-size: 125%;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  body {
+    font: 1em/1.618 Inter, sans-serif;
+    margin: 0;
+    color: #224;
+    background:
+      url(https://i.ibb.co/Qjt7TJn/milad-fakurian-E8-Ufcyxz514-unsplash-1.jpg) center / cover no-repeat fixed;
+  }
+
+  .site-container {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 1.5em;
+  }
+
+  .card {
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
+    user-select: none;
+  }
+
+  .search-box {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .details-container {
+    margin-top: 20px;
+  }
+
+  details {
+    margin-bottom: 10px;
+  }
+
+  hr {
+    border: none;
+    height: 1px;
+    background-color: #ccc;
+    margin: 10px 0;
+  }
+  
+  
+    .back-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      border-radius: 25px;
+      position: fixed; /* Fixed position */
+      top: 10px; /* Top-left corner */
+      left: 10px;
+      z-index: 1000; /* Keeps it above other elements */
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .back-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateX(-100%);
+      transition: transform 0.4s ease;
+    }
+
+    .back-button:hover::before {
+      transform: translateX(0);
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .back-button span {
+      margin-left: 8px;
+      transition: margin-left 0.3s ease;
+    }
+
+    .back-button:hover span {
+      margin-left: 16px;
+    }
+
+    .back-button i {
+      font-size: 20px;
+    }
+  </style>
+  
+  
+</style>
+
+<body oncontextmenu="return false">
+  
+  
+  
+  
+  <a href="main-page.html" class="back-button">
+    <i>&larr;</i>
+    <span>Go Back</span>
+  </a>
+  
+ 
+ 
+    <!-- social media button -->  
+<div class="socialButton" style="position: fixed; right: 2%; top: 20%; transform: translateY(-50%); z-index: 999;">
+    <a class="socialButton1" href="https://insta.openinapp.co/21i6h" style="display: block; margin-bottom: 10px;">
+        <img src="insta.png" alt="Instagram" style="height: 50px; width: 50px;">
+    </a>
+    <a class="socialButton1" href="https://yt.openinapp.co/2erp5" style="display: block;">
+        <img src="youtube.png" alt="YouTube" style="height: 50px; width: 50px;">
+    </a>
+    <a class="socialButton1" href="https://smartkyp.blogspot.com/?m=1#" style="display: block;">
+        <img src="weblogo.png" alt="YouTube" style="height: 50px; width: 50px; margin-top: 10px;">
+    </a>
+</div>
+  
+  
+  
+
+  <div class="site-container">
+    <div class="card">
+      <!-- Search Box -->
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search questions...">
+      </div>
+
+      <!-- Questions List -->
+      <div class="details-container" id="detailsContainer">
+        
+        <h2 style="font-size: 35px; colour: greenyellow;">smart kyp</h2>
+        
+        <details>
+  <summary style="font-weight: bold;">1. In the given document, split all the text into one column.</summary>
+  <p>Go to the Layout tab > Columns > Select "One".</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">2. In the given spreadsheet, insert hyperlink to the heading text ‘’magic cafe’’ and link this to “http://www.magiccafe.com” web page.</summary>
+  <p>Select the heading text > Right-click > Hyperlink > Add "http://www.magiccafe.com" > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">3. In the given worksheet, change the page orientation to landscape layout.</summary>
+  <p>Go to the Page Layout tab > Orientation > Select "Landscape".</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">4. In the given presentation, insert a new blank slide at the end.</summary>
+  <p>Go to the Home tab > Slides group > New Slide > Blank Slide.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">5. Display the given presentation in “slide sorter view”.</summary>
+  <p>Go to the View tab > Presentation Views group > Slide Sorter.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">6. Remove the “drop cap” effect from the given document.</summary>
+  <p>Select the text with the drop cap > Go to the Insert tab > Text group > Drop Cap > None.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">7. In the given presentation, change the line spacing of the title present on the first slide (slide no.1) to “2.0 lines”.</summary>
+  <p>Select the title text > Go to the Home tab > Paragraph group > Line Spacing > 2.0.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">8. In the spreadsheet, insert new worksheet after “personal monthly budget” sheet and set the name of this sheet as “budget”.</summary>
+  <p>Click on the "+" icon to add a new worksheet > Drag it after "personal monthly budget" sheet > Right-click > Rename > Type "budget".</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">9. In the given presentation, add two blank slides. Apply “uncover” slide transition effect and “from top” variation effect to all the slides.</summary>
+  <p>Go to the Home tab > New Slide > Blank Slide (twice). Then, go to the Transitions tab > Select "Uncover" > Effect Options > From Top.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">10. Add additional two slides to the existing presentation. Set the timing of slide automatically after 4 seconds for 1st slide (slide no. 1).</summary>
+  <p>Add two slides > Go to the Transitions tab > Set Advance Slide timing to 4 seconds for slide 1.</p>
+</details>
+<hr style="width: 100%;">
+<details>
+  <summary style="font-weight: bold;">11. Change the right margin of the given document to 0.6 inches.</summary>
+  <p>Go to the Layout tab > Page Setup group > Margins > Custom Margins > Set "Right" to 0.6 inches > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">12. In the given presentation, delete all the images from the second slide.</summary>
+  <p>Go to slide 2 > Select each image > Press Delete.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">13. Insert additional six slides in the given MS PowerPoint presentation. Hide third slide (slide no.3) while running slide show.</summary>
+  <p>Insert six new slides > Go to slide 3 > Right-click > Hide Slide.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">14. Add the text “lanes town high school” to the footer and apply it to all slides.</summary>
+  <p>Go to the Insert tab > Text group > Header & Footer > Footer > Type "lanes town high school" > Apply to All.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">15. Apply “drop cap – in margin” effect to the first sentence of the given document.</summary>
+  <p>Select the first sentence > Go to the Insert tab > Text group > Drop Cap > Drop Cap Options > In Margin > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">16. In the given document, remove hyperlink of the word “home group”.</summary>
+  <p>Right-click on the word "home group" > Remove Hyperlink.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">17. In the given document, create a hyperlink for the text ‘project report’ to open “http://www.google.com” web page.</summary>
+  <p>Select the text “project report” > Right-click > Hyperlink > Type "http://www.google.com" > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">18. In the given document, apply ‘bold’ and ‘underline’ style to the third sentence.</summary>
+  <p>Select the third sentence > Go to the Home tab > Font group > Click Bold (B) and Underline (U).</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">19. In the given MS Word document, insert hyperlink to the image and link this image to “http://www.theflyer.com” web page.</summary>
+  <p>Select the image > Right-click > Hyperlink > Type "http://www.theflyer.com" > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">20. In the given worksheet, insert new worksheet and change the page orientation to landscape layout.</summary>
+  <p>Insert a new worksheet > Go to the Page Layout tab > Orientation > Landscape.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">21. Insert the values 50, 100, 65, 96 in cells G7, G8, G9, G10 respectively. Calculate the sum of the cell range G7 to G10 and display it in the cell G13 using a function.</summary>
+  <p>Enter the values in G7:G10 > Select G13 > Type "=SUM(G7:G10)" > Press Enter.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">22. In the given worksheet, select rows 10 and 11 and move them to rows 7 and 8.</summary>
+  <p>Select rows 10 and 11 > Right-click > Cut > Select row 7 > Right-click > Insert Cut Cells.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">23. Change the font size of the second sentence to 14.</summary>
+  <p>Select the second sentence > Go to the Home tab > Font group > Set Font Size to 14.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">24. Insert additional four slides in the given MS PowerPoint presentation. Hide second slide (slide no.2) while running slide show.</summary>
+  <p>Insert four new slides > Go to slide 2 > Right-click > Hide Slide.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">25. Change the font effect of the fifth sentence to “strikethrough” in the given document.</summary>
+  <p>Select the fifth sentence > Go to the Home tab > Font group > Click Strikethrough.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">26. In the given presentation, remove footer text from all the slides.</summary>
+  <p>Go to the Insert tab > Text group > Header & Footer > Uncheck Footer > Apply to All.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">27. Check and correct all spelling and grammar mistakes in the given document.</summary>
+  <p>Go to the Review tab > Proofing group > Spelling & Grammar > Review and correct the suggestions.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">28. Calculate total marks of the first student by using appropriate function in cell L2 and replicate the same formula to the cell range L3:L21.</summary>
+  <p>In L2, enter the formula (e.g., "=SUM(B2:K2)") > Drag the fill handle down to L21.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">29. In the given spreadsheet file, insert header “payment details” in the centre section of the header. After entering the header and footer, click on cell A1.</summary>
+  <p>Go to the Insert tab > Text group > Header & Footer > Enter “payment details” in the centre section > Click A1.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">30. In the given presentation, change the case of the paragraph present on the third slide to “uppercase”.</summary>
+  <p>Select the paragraph > Go to the Home tab > Font group > Change Case > UPPERCASE.</p>
+</details>
+<hr style="width: 100%;">
+<details>
+  <summary style="font-weight: bold;">31. Copy slide number 8 and paste it as a new slide at the end of the given presentation.</summary>
+  <p>Go to slide 8 > Right-click > Copy > Go to the end of the presentation > Right-click > Paste.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">32. In the given spreadsheet, change the chart from a column chart to a bar chart. Apply any style from clustered bar chart.</summary>
+  <p>Select the chart > Go to the Chart Tools Design tab > Change Chart Type > Select Bar Chart > Clustered Bar > OK > Apply desired style.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">33. For the given Word document, change the top margin to 2 inches.</summary>
+  <p>Go to the Layout tab > Page Setup group > Margins > Custom Margins > Set "Top" to 2 inches > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">34. In the given spreadsheet, apply “accent2” cell style to the cell range A2:G2.</summary>
+  <p>Select the range A2:G2 > Go to the Home tab > Styles group > Cell Styles > Accent2.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">35. In the given file, create a table of 5 rows and 5 columns.</summary>
+  <p>Go to the Insert tab > Tables group > Table > Insert Table > Set rows to 5 and columns to 5 > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">36. In the given workbook, delete the “audit” worksheet.</summary>
+  <p>Right-click on the "audit" worksheet tab > Delete.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">37. In the given document, set the top margin to 2.5 inches.</summary>
+  <p>Go to the Layout tab > Page Setup group > Margins > Custom Margins > Set "Top" to 2.5 inches > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">38. Change the font style of the third sentence of the given document to “italic”.</summary>
+  <p>Select the third sentence > Go to the Home tab > Font group > Click Italic (I).</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">39. You are about to read a document that has a lot of text pages. It’s difficult to browse through such a document as the reading space is less. How will you switch to “read mode” view which gives maximum reading space?</summary>
+  <p>Go to the View tab > Views group > Click Read Mode.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">40. In the given spreadsheet file, apply “accent3” cell style to the cell range A2:H2.</summary>
+  <p>Select the range A2:H2 > Go to the Home tab > Styles group > Cell Styles > Accent3.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">41. In the given presentation, create a duplicate slide for the first slide.</summary>
+  <p>Go to slide 1 > Right-click > Duplicate Slide.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">42. Create two additional blank slides in the given presentation and view the presentation through the “notes page view”.</summary>
+  <p>Insert two blank slides > Go to the View tab > Presentation Views group > Notes Page.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">43. In the given presentation, insert a new slide with “two content” layout at the end.</summary>
+  <p>Go to the Home tab > Slides group > New Slide > Two Content Layout.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">44. Delete the entire table from the given document.</summary>
+  <p>Select the table > Right-click > Delete Table.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">45. In the given presentation, remove the reflection effect from the word art text “save tigers”.</summary>
+  <p>Select the WordArt text “save tigers” > Go to the Format tab > WordArt Styles group > Text Effects > Reflection > No Reflection.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">46. In the given presentation, insert additional three blank slides at the end.</summary>
+  <p>Go to the Home tab > Slides group > New Slide > Repeat three times.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">47. In the given document, insert the registered trademark symbol ® at the end of the document.</summary>
+  <p>Place the cursor at the end of the document > Go to the Insert tab > Symbols group > Symbol > Registered Trademark (®).</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">48. Add watermark text ‘envelope’ in the given document.</summary>
+  <p>Go to the Design tab > Page Background group > Watermark > Custom Watermark > Text Watermark > Enter “envelope” > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">49. In the given presentation, delete any one placeholder from the first slide.</summary>
+  <p>Select the placeholder > Press Delete.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">50. Add additional four slides to the existing presentation. Display the 4th slide (slide no. 4) automatically after 3 seconds while running slide show. Apply time effect for the third slide (slide no. 3).</summary>
+  <p>Insert four new slides > Go to slide 4 > Transitions tab > Timing group > After: 3 seconds > Apply. Repeat for slide 3.</p>
+</details>
+<hr style="width: 100%;">
+<details>
+  <summary style="font-weight: bold;">51. Delete worksheet “home loan” from the given spreadsheet.</summary>
+  <p>Right-click on the "home loan" worksheet tab > Delete.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">52. In the given document, use “draw table” option and create a table with one row and two columns.</summary>
+  <p>Go to the Insert tab > Tables group > Table > Draw Table > Draw one row with two columns.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">53. Insert one more blank slide in the given presentation. Hide the first slide (slide no. 1).</summary>
+  <p>Go to the Home tab > Slides group > New Slide > Select Blank Slide > Go to slide 1 > Right-click > Hide Slide.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">54. In the given presentation, insert action button “home” anywhere in the last slide (slide no. 2).</summary>
+  <p>Go to the Insert tab > Illustrations group > Shapes > Action Buttons > Select “Home” > Place it on slide 2.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">55. You have created your resume using MS Word. Now you want to insert your photo in a picture control. How will you insert a picture control at the beginning of the given document?</summary>
+  <p>Place the cursor at the beginning of the document > Go to the Insert tab > Text group > Quick Parts > Document Property > Picture.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">56. Remove the numbered list from the given document.</summary>
+  <p>Select the numbered list > Go to the Home tab > Paragraph group > Click the Numbering icon to remove numbering.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">57. In the given document, change the capitalization of the entire document to lowercase.</summary>
+  <p>Press Ctrl+A to select all text > Go to the Home tab > Font group > Change Case > Lowercase.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">58. Remove the “drop cap” effect from the given document.</summary>
+  <p>Select the text with drop cap > Go to the Insert tab > Text group > Drop Cap > None.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">59. In the given Word document, change the case of the third sentence to uppercase.</summary>
+  <p>Select the third sentence > Go to the Home tab > Font group > Change Case > Uppercase.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">60. Apply “bold” font style to the entire document.</summary>
+  <p>Press Ctrl+A to select all text > Go to the Home tab > Font group > Click Bold (B).</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">61. In the given document, insert the text box “Austin quote” and type “welcome” text inside the text box.</summary>
+  <p>Go to the Insert tab > Text group > Text Box > Select “Austin Quote” > Type "welcome" inside the text box.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">62. In the given MS Word document, replace the word “programmer” with the word “developer” throughout the document.</summary>
+  <p>Press Ctrl+H > Find "programmer" > Replace with "developer" > Replace All.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">63. In the given MS Word document, replace the word “nice” with the word “main” throughout the document.</summary>
+  <p>Press Ctrl+H > Find "nice" > Replace with "main" > Replace All.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">64. Delete the “picture content control” from the given document.</summary>
+  <p>Select the picture content control > Press Delete.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">65. In the given MS Word document, replace the word “shelf” with the word “desk” throughout the document.</summary>
+  <p>Press Ctrl+H > Find "shelf" > Replace with "desk" > Replace All.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">66. In the given document, insert a table of five rows and six columns at the top of the document.</summary>
+  <p>Place the cursor at the top of the document > Go to the Insert tab > Tables group > Table > Insert Table > Set rows to 5 and columns to 6 > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">67. Remove the table border from the given document.</summary>
+  <p>Select the table > Go to the Table Design tab > Borders group > No Border.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">68. You have created a birthday greeting card for your friend. You want to change the background of the greeting card. How will you apply “purple mesh” texture effect to the given greeting card?</summary>
+  <p>Go to the Design tab > Page Background group > Page Color > Fill Effects > Texture > Select “Purple Mesh” > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">69. You have created a project report in MS Word. For all the headings in the report, you want to have consistent formatting. How will you apply formatting of “introduction” heading to the remaining headings using format painter?</summary>
+  <p>Select the “introduction” heading > Go to the Home tab > Clipboard group > Format Painter > Apply to other headings.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">70. In the Word document, insert a table with 3 rows and 3 columns and change the background color of the entire table to “orange”.</summary>
+  <p>Go to the Insert tab > Tables group > Table > Insert Table > Set rows to 3 and columns to 3 > OK > Select the table > Go to the Table Design tab > Shading > Orange.</p>
+</details>
+<hr style="width: 100%;">
+<details>
+  <summary style="font-weight: bold;">71. In the given MS Word document, change the page orientation to landscape.</summary>
+  <p>Go to the Layout tab > Page Setup group > Orientation > Select Landscape.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">72. In the given MS Word document, replace the word “magic” with the word “drama” throughout the document.</summary>
+  <p>Press Ctrl+H > Find "magic" > Replace with "drama" > Replace All.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">73. In the given MS Word document, insert hyperlink to the image and link this image to “http://www.hallmark.com” web page.</summary>
+  <p>Right-click on the image > Hyperlink > Insert “http://www.hallmark.com” > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">74. Set 1.5-inch bottom margin for the given document.</summary>
+  <p>Go to the Layout tab > Page Setup group > Margins > Custom Margins > Set Bottom to 1.5 inches > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">75. In the given MS Word document, replace the word “Unix” with the word “Linux” throughout the document.</summary>
+  <p>Press Ctrl+H > Find "Unix" > Replace with "Linux" > Replace All.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">76. Apply artistic page border to the given document.</summary>
+  <p>Go to the Design tab > Page Background group > Page Borders > Borders and Shading > Art > Select desired artistic border > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">77. Delete any one table column from the given document.</summary>
+  <p>Select the column in the table > Right-click > Delete Columns.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">78. Set 1.5-inch top margin for the given document.</summary>
+  <p>Go to the Layout tab > Page Setup group > Margins > Custom Margins > Set Top to 1.5 inches > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">79. Set 1.5-inch left margin for the given document.</summary>
+  <p>Go to the Layout tab > Page Setup group > Margins > Custom Margins > Set Left to 1.5 inches > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">80. Delete worksheet “list info” from the given spreadsheet.</summary>
+  <p>Right-click on the "list info" worksheet tab > Delete.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">81. Set 80% zoom level for the given document.</summary>
+  <p>Go to the View tab > Zoom group > Zoom > Set to 80% > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">82. Set 90% zoom level for the given document.</summary>
+  <p>Go to the View tab > Zoom group > Zoom > Set to 90% > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">83. Change the width of column C to 25.</summary>
+  <p>Select column C > Go to the Home tab > Cells group > Format > Column Width > Enter 25 > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">84. Merge and center the heading “blood donor database” from cell A4 to H4.</summary>
+  <p>Select cells A4 to H4 > Go to the Home tab > Alignment group > Merge & Center.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">85. Set 75% zoom level for the given worksheet.</summary>
+  <p>Go to the View tab > Zoom group > Zoom > Set to 75% > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">86. In the given spreadsheet file, insert a new column after column B.</summary>
+  <p>Right-click on column C header > Insert.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">87. In the given spreadsheet file, insert a new column after column E.</summary>
+  <p>Right-click on column F header > Insert.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">88. Change the width of column E to 15.57.</summary>
+  <p>Select column E > Go to the Home tab > Cells group > Format > Column Width > Enter 15.57 > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">89. Change the row height to 30 for row number 5.</summary>
+  <p>Select row 5 > Go to the Home tab > Cells group > Format > Row Height > Enter 30 > OK.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">90. Move the worksheet “car loan” and insert it after the worksheet “home loan”.</summary>
+  <p>Click and drag the "car loan" worksheet tab to place it after the "home loan" tab.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">91. In the given spreadsheet, show legend elements at the bottom of the chart.</summary>
+  <p>Select the chart > Go to the Chart Design tab > Chart Layouts group > Add Chart Element > Legend > Bottom.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">92. Arrange Excel data by sorting column B (particular) in Z to A (highest to lowest) order.</summary>
+  <p>Select column B > Go to the Data tab > Sort & Filter group > Sort > Choose Z to A.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">93. In the given spreadsheet, remove all cell formatting from A1:D1 cell range.</summary>
+  <p>Select cell range A1:D1 > Right-click > Clear Contents > Clear Formats.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">94. Apply “Style 6” chart style to the given chart.</summary>
+  <p>Select the chart > Go to the Chart Design tab > Chart Styles group > Choose “Style 6”.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">95. In the given spreadsheet, change the chart from a pie chart to a bar chart. Apply default chart style.</summary>
+  <p>Select the chart > Go to the Chart Design tab > Change Chart Type > Select Bar Chart > OK > Apply Default Style.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">96. In the given spreadsheet, autofit the width of column B.</summary>
+  <p>Select column B > Double-click the right edge of the column header.</p>
+</details>
+<hr style="width: 100%;">
+
+<details>
+  <summary style="font-weight: bold;">97. In the given worksheet, apply “Verdana” font to the cell H12.</summary>
+  <p>Select cell H12 > Go to the Home tab > Font group > Choose "Verdana".</p>
+</details>
+<hr style="width: 100%;">
+
+
+
+
+
+
+
+
+
+
+        <!-- Additional details as in your original content -->
+      </div>
+    </div>
+  </div>
+
+ <script>
+   // Disable text copying via keyboard shortcuts
+   document.addEventListener('keydown', function(e) {
+     if (e.ctrlKey && (e.key === 'c' || e.key === 'x' || e.key === 'u')) {
+       e.preventDefault();
+       alert('Copying content is disabled on this page.');
+     }
+   });
+
+   // Live Search Functionality
+   const searchInput = document.getElementById('searchInput');
+   const detailsContainer = document.getElementById('detailsContainer');
+   const details = detailsContainer.querySelectorAll('details');
+
+   searchInput.addEventListener('input', function() {
+     const searchTerm = this.value.toLowerCase();
+
+     details.forEach(detail => {
+       const question = detail.querySelector('summary').textContent.toLowerCase();
+       const answer = detail.querySelector('p').textContent.toLowerCase();
+
+       // Check if search term matches any part of the question or answer
+       if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+         detail.style.display = 'block'; // Show if match is found
+       } else {
+         detail.style.display = 'none'; // Hide if no match
+       }
+     });
+   });
+ </script>
+
+</body>
+
+</html>

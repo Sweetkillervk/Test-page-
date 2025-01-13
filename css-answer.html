@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  :root {
+    font-size: 125%;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  body {
+    font: 1em/1.618 Inter, sans-serif;
+    margin: 0;
+    color: #224;
+    background:
+      url(https://i.ibb.co/Qjt7TJn/milad-fakurian-E8-Ufcyxz514-unsplash-1.jpg) center / cover no-repeat fixed;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 1.5em;
+  }
+
+  .site-container {
+    display: grid;
+    place-items: center;
+
+    min-height: 100vh;
+    padding: 1.5em;
+  }
+
+
+  .card {
+    max-width: 300px;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    max-width: 500px;
+    height: auto;
+    padding: 35px;
+
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(15px);
+  }
+
+  .card-footer {
+    font-size: 0.65em;
+    color: #446;
+  }
+  
+  
+  
+  
+    .back-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      border-radius: 25px;
+      position: fixed; /* Fixed position */
+      top: 10px; /* Top-left corner */
+      left: 10px;
+      z-index: 1000; /* Keeps it above other elements */
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .back-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateX(-100%);
+      transition: transform 0.4s ease;
+    }
+
+    .back-button:hover::before {
+      transform: translateX(0);
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .back-button span {
+      margin-left: 8px;
+      transition: margin-left 0.3s ease;
+    }
+
+    .back-button:hover span {
+      margin-left: 16px;
+    }
+
+    .back-button i {
+      font-size: 20px;
+    }
+  </style>
+  
+  
+  
+</style>
+
+<body>
+  
+  
+  
+  <a href="main-page.html" class="back-button">
+    <i>&larr;</i>
+    <span>Go Back</span>
+  </a>
+  
+
+  <div class="site-container">
+
+    <div class="card">
+      <h2>Ashok speaks well but doesn't want to express himself in a group. This means-----</h2>
+      <h4>Answer: He needs to work on interpersonal skills and confidence.</h4>
+
+      <h2>A presentation satisfies the prime need of communication on various subjects between either two people or a group of people.</h2>
+      <h4>Answer: Communication</h4>
+
+      <h2>As a presenter, we must always keep in mind that we have to</h2>
+      <h4>Answer: Hold the attention of the audience and impress them with our content.</h4>
+
+      <h2>After assigning priorities of things to be done, what should you do?</h2>
+      <h4>Answer: Allocate specific time to each activity/task.</h4>
+
+      <h2>Careful and attentive listening is an essential part of developing effective interpersonal skills.</h2>
+      <h4>Answer: Agree</h4>
+
+      <h2>Dinesh has a habit of nail-biting when some unexpected problem arises. This indicates that</h2>
+      <h4>Answer: He takes stress very easily.</h4>
+
+      <h2>How often should you reschedule meetings?</h2>
+      <h4>Answer: Rarely as you should respect others' time too.</h4>
+
+      <h2>How will you behave if your dear friend cannot stop crying while narrating an incident to you?</h2>
+      <h4>Answer: You will say that it doesn't matter and it is not the end of things.</h4>
+
+      <h2>In a group discussion, you should be flexible, but</h2>
+      <h4>Answer: You must put forth what you want to say.</h4>
+
+      <h2>If a team leader communicates positively with his team mates and gets the work done effectively, the person has</h2>
+      <h4>Answer: Good interpersonal skills.</h4>
+
+      <h2>I cannot do what I or others expect because the expectations are unrealistic. This indicates</h2>
+      <h4>Answer: Pessimistic attitude.</h4>
+
+      <h2>I control my anger and handle the difficult situation. I know how to manage my stress.</h2>
+      <h4>Answer: Agree</h4>
+
+      <h2>I am short-tempered and testy or cross with people. This will</h2>
+      <h4>Answer: Make me isolated from others and more stressed.</h4>
+
+      <h2>________ is the most important component of making successful presentations.</h2>
+      <h4>Answer: Preparation</h4>
+
+      <h2>In a presentation, you should accept different views of different people. This shows your</h2>
+      <h4>Answer: Positive attitude and positive acceptance of critical feedback.</h4>
+
+      <h2>In the organization, there is a collective responsibility of completing a given job in a specific time. This is broadly called a</h2>
+      <h4>Answer: Plan.</h4>
+
+      <h2>If you find it difficult to achieve your goal, what will you do?</h2>
+      <h4>Answer: Split it into smaller goals.</h4>
+
+      <h2>If your mind does not accept the goal you have decided, it will</h2>
+      <h4>Answer: Start giving excuses about achieving the goal.</h4>
+
+      <h2>If you cultivate a habit of reasoning out things with yourself or with friends and comrades,</h2>
+      <h4>Answer: You realize that there is nothing serious at the base of these feelings.</h4>
+
+      <h2>Jealousy makes the person</h2>
+      <h4>Answer: Incapable of appreciating good in others.</h4>
+
+      <h2>Knowingly or unknowingly people tend to lie about things. This can create ----- at your workplace and your personal life.</h2>
+      <h4>Answer: Stressful situations</h4>
+
+      <h2>Leena has to attend a mix of clients. She should</h2>
+      <h4>Answer: Dress up decently</h4>
+
+      <h2>Long-term goals are</h2>
+      <h4>Answer: The major targets in your life.</h4>
+
+      <h2>Meena saw her colleague's mailbox open when her colleague was not in her place. What should be Meena's reaction to this?</h2>
+      <h4>Answer: Meena should inform this to her colleague on her return.</h4>
+
+      <h2>Making the right decision means</h2>
+      <h4>Answer: Selecting the appropriate alternative from the available alternatives.</h4>
+
+      <h2>Meera is a group leader who wants to complete a very important task. So she has to</h2>
+      <h4>Answer: Make her team members listen to each other's views carefully so that they can complete the task effectively.</h4>
+
+      <h2>Manish is very good at his work but shy, and so when speaking with others he is not confident at all. His colleague Deepak is bold, and so the boss always asks Deepak to communicate with others. Now that Deepak got a bigger raise than him, what should Manish do?</h2>
+      <h4>Answer: Manish should learn by observing Deepak when he speaks to others. He should also start to practice speaking. There is a lot of information on the internet about how to get this skill gradually. This skill is essential for everyone in today's world.</h4>
+
+      <h2>My decisions tend to be hasty rather than planned; I change my mind frequently. This indicates</h2>
+      <h4>Answer: My decisions may land me in stressful conditions.</h4>
+
+      <h2>Non-verbal communication like a smile or a raised thumb in appreciation of others forms an essential component of interpersonal skills.</h2>
+      <h4>Answer: Agree</h4>
+
+      <h2>Procrastinating or neglecting responsibilities at the workplace shows</h2>
+      <h4>Answer: Lack of positive attitude.</h4>
+
+      <h2>Preparing a checklist of your tasks shows that</h2>
+      <h4>Answer: You wish to complete them on time.</h4>
+
+      <h2>Preparing a to-do list helps you to</h2>
+      <h4>Answer: Prioritize your tasks as per the available time.</h4>
+
+      <h2>Right decisions at the right time may get hampered due to</h2>
+      <h4>Answer: Emotional attachments.</h4>
+
+      <h2>Ramesh does not follow the rules of the company and everyday comes late to the office. This indicates</h2>
+      <h4>Answer: He needs to work on punctuality.</h4>
+
+      <h2>Rakesh wanted to start earlier for his office but found that the tiffin was not ready. His wife was unaware of his schedule for today and was preparing the tiffin as per his usual timings. Rakesh decided to take chapatis with him which were ready and order sabji from the canteen. How will you describe this situation?</h2>
+      <h4>Answer: Rakesh tried to manage the possible conflict by reducing the negative elements of the situation and focusing on the positive elements of it.</h4>
+
+      <h2>Sometimes your imaginary problems only take you in stressful situations.</h2>
+      <h4>Answer: Agree</h4>
+
+      <h2>Shenha doesn't like the feedback given by her teacher on her dressing style and started crying. This indicates</h2>
+      <h4>Answer: She needs to work on accepting feedback positively.</h4>
+
+      <h2>Sameer's college professor has asked everyone in his class to make a list of individual strengths and weaknesses. He also wants every student to come and read out their lists for the class. Sameer is against this idea. Do you think he is right? If yes, why? If no, why?</h2>
+      <h4>Answer: All of us have some strengths and weaknesses. Unless we list them out realistically and systematically, how would it be possible for us to work on them and improve? So Sameer is not right.</h4>
+
+      <h2>Sameer calls his friend and relatives frequently when he is in the office. This means</h2>
+      <h4>Answer: He is misusing the company time.</h4>
+
+      <h2>Sanjeev always joins the office meetings late. This means</h2>
+      <h4>Answer: He doesn't respect others' time, which is not acceptable workplace ethics.</h4>
+
+      <h2>Seniors behaving in a morally upright manner set an example for employees to follow. This leads to good workplace ethics.</h2>
+      <h4>Answer: Agree</h4>
+
+      <h2>Short term goals can be accomplished in</h2>
+      <h4>Answer: A year</h4>
+
+      <h2>Spending some time in planning your day is</h2>
+      <h4>Answer: Good as it enables you to utilize the available time productively.</h4>
+
+      <h2>Taking responsibility for your actions is a major factor when it comes to workplace ethics. This is</h2>
+      <h4>Answer: Accountability</h4>
+
+      <h2>Taking computer printable sheets from office to home suits the workplace ethics.</h2>
+      <h4>Answer: Disagree</h4>
+
+      <h2>To identify negativity in you,</h2>
+      <h4>Answer: Speak about your weakness with your friends.</h4>
+
+      <h2>The statement ---------- will help your friend in building trust in you.</h2>
+      <h4>Answer: You will never give away your friend's secrets.</h4>
+
+      <h2>Thoughts and feelings about my problems run through my mind. This indicates</h2>
+      <h4>Answer: I take stress of my problems.</h4>
+
+      <h2>There would not be any conflict at a workplace if everyone works hard and sincerely. Is this statement correct?</h2>
+      <h4>Answer: This is incorrect. As long as some humans come together for some common goal, there will be conflict, it will always exist at a workplace too. Conflict has to be managed to get some.</h4>
+
+      <h2>Today I had been worrying about something since morning. I was late reaching work. And on top of that my clothes got wet and muddy because of the heavy rain. My colleagues saw me. I do not lose my temper but today I became very angry and yelled at them. What should I do now?</h2>
+      <h4>I know that it was wrong to lose my temper so I must calm down and then go express my regrets. Then I can also explain in short that I have been worried and what the reaction was for.</h4>
+
+      <h2>There has been a fight over something personal between Dinesh's two very good friends. Both have asked him to decide which one of them was right. What advice would you give him?</h2>
+      <h4>Dinesh must listen to both the sides and decide fairly. Whoever he feels is right, he should side by that friend. He surely can make a good decision.</h4>
+
+      <h2>Using office stationery and other facilities for your personal use shows that</h2>
+      <h4>You are not a responsible employee.</h4>
+
+      <h2>What is the purpose of making a To-Do list?</h2>
+      <h4>To save time and use it in a more productive manner.</h4>
+
+      <h2>When you join a new friend circle, there is nothing wrong in</h2>
+      <h4>Proudly presenting your talents.</h4>
+
+      <h2>When you join a new friend circle, there is nothing wrong in proudly presenting your talents, because</h2>
+      <h4>Everybody does not know your skills.</h4>
+
+      <h2>When a speaker addresses a person by name in formal discussions, he or she</h2>
+      <h4>Gets associated with the speaker and the topic immediately.</h4>
+
+      <h2>When you communicate with a person who is not actually present in front of you, you use the best of your interpersonal skills.</h2>
+      <h4>Disagree</h4>
+
+      <h2>When you want to make a better presentation than your team members do, you should</h2>
+      <h4>Think divergently on the topic.</h4>
+
+      <h2>When we prepare any presentation, we should give priority to</h2>
+      <h4>The content of the presentation.</h4>
+
+      <h2>What is the advantage of knowing / identifying our strengths and weaknesses?</h2>
+      <h4>We can develop our capabilities and thereby develop our personality.</h4>
+
+      <h2>Which of the following is the example of a sensitive and responsible citizen?</h2>
+      <h4>It was a very crowded bus that day. A lady was standing with her baby and looking for a seat. A young boy sitting there got up and offered his seat to the lady.</h4>
+
+      <h2>We realize that we behave in a certain manner with different people and in different circumstances. How does this knowledge help us?</h2>
+      <h4>If the behavior is not helping our personal development or our overall progress, we can work on ourselves to improve our responses and actions.</h4>
+
+      <h2>What is more important is splitting the larger goals in life into</h2>
+      <h4>Small achievable targets.</h4>
+
+      <h2>You delay the expected action on the things you have planned. This indicates that</h2>
+      <h4>You procrastinate the things.</h4>
+
+      <h2>You make way for the ambulance and fire engines when you drive. This indicates</h2>
+      <h4>You are aware of your responsibilities.</h4>
+
+      <h2>You attend your office on time. This indicates</h2>
+      <h4>You individually follow the rules.</h4>
+
+      <h2>You visit a cloth shop, try many outfits and come out without purchasing anything. You tell the salesman that you do not like anything. You</h2>
+      <h4>Feel good about being self-assertive.</h4>
+
+      <h2>You visit a dam with your friends. You see there warning signs on the banks of the dam stating that swimming is prohibited. One of your friends suggests that you should take a dip in the water and play some water games. You would</h2>
+      <h4>Stop your friends from going to swim.</h4>
+
+
+    </div>
+
+  </div>
+
+</body>
+
+<script>
+  // Disable text selection
+document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+});
+
+// Disable right-click
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+// Disable drag events (to prevent dragging content)
+document.addEventListener('dragstart', function(e) {
+    e.preventDefault();
+});
+</script>
+
+</html>

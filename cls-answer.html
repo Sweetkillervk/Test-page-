@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  :root {
+    font-size: 125%;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  body {
+    font: 1em/1.618 Inter, sans-serif;
+    margin: 0;
+    color: #224;
+    background:
+      url(https://i.ibb.co/Qjt7TJn/milad-fakurian-E8-Ufcyxz514-unsplash-1.jpg) center / cover no-repeat fixed;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 1.5em;
+  }
+
+  .site-container {
+    display: grid;
+    place-items: center;
+
+    min-height: 100vh;
+    padding: 1.5em;
+  }
+
+
+  .card {
+    max-width: 300px;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    max-width: 500px;
+    height: auto;
+    padding: 35px;
+
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(15px);
+  }
+
+  .card-footer {
+    font-size: 0.65em;
+    color: #446;
+  }
+  
+  
+  
+    .back-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      border-radius: 25px;
+      position: fixed; /* Fixed position */
+      top: 10px; /* Top-left corner */
+      left: 10px;
+      z-index: 1000; /* Keeps it above other elements */
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .back-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateX(-100%);
+      transition: transform 0.4s ease;
+    }
+
+    .back-button:hover::before {
+      transform: translateX(0);
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .back-button span {
+      margin-left: 8px;
+      transition: margin-left 0.3s ease;
+    }
+
+    .back-button:hover span {
+      margin-left: 16px;
+    }
+
+    .back-button i {
+      font-size: 20px;
+    }
+  </style>
+  
+  
+  
+  
+</style>
+
+<body>
+  
+  
+  
+  <a href="main-page.html" class="back-button">
+    <i>&larr;</i>
+    <span>Go Back</span>
+  </a>
+  
+  
+  
+
+  <div class="site-container">
+
+    <div class="card">
+      <h2>1. It ——- at 9:00 in the evening.</h2>
+      <h4>Answer: Closes</h4>
+
+      <h2>2. You shouldn’t ——- called him a fool.</h2>
+      <h4>Answer: Have</h4>
+
+      <h2>3. They ——- finished the job.</h2>
+      <h4>Answer: Have</h4>
+
+      <h2>4. Bad driving ——- many accidents.</h2>
+      <h4>Answer: Causes</h4>
+
+      <h2>5. You ——- the wrong dress for the interview.</h2>
+      <h4>Answer: Chose</h4>
+
+      <h2>6. Where ——- they go yesterday?</h2>
+      <h4>Answer: Did</h4>
+
+      <h2>7. Somebody must ——– take my cellphone.</h2>
+      <h4>Answer: Have</h4>
+
+      <h2>8. She —— always wanted to meet him.</h2>
+      <h4>Answer: Has</h4>
+
+      <h2>9. Anita —— tennis very well.</h2>
+      <h4>Answer: Plays</h4>
+
+      <h2>10. How much —— it?</h2>
+      <h4>Answer: Is</h4>
+
+      <h2>11. My parents —— in a very small flat.</h2>
+      <h4>Answer: Live</h4>
+
+      <h2>12. She does not want ——- not want to stay at home.</h2>
+      <h4>Answer: Does</h4>
+
+      <h2>13. My friend Anita —— sport.</h2>
+      <h4>Answer: Loves</h4>
+
+      <h2>14. You —— riding non-stop for hours so you must be very tired.</h2>
+      <h4>Answer: Have been</h4>
+
+      <h2>15. What —— you do every Sunday?</h2>
+      <h4>Answer: Do</h4>
+
+      <h2>16. Good students always ——- their homework.</h2>
+      <h4>Answer: Do</h4>
+
+      <h2>17. The swimming pool —— at 7:00 in the morning.</h2>
+      <h4>Answer: Opens</h4>
+
+      <h2>18. I never —— coffee.</h2>
+      <h4>Answer: Drink</h4>
+
+      <h2>19. The Olympic game —— place every four years.</h2>
+      <h4>Answer: Takes</h4>
+
+      <h2>20. I —— hungry.</h2>
+      <h4>Answer: Am</h4>
+
+      <h2>21. She has never ——- something like that before.</h2>
+      <h4>Answer: Done</h4>
+
+      <h2>22. They ——- a cat and a dog.</h2>
+      <h4>Answer: Have</h4>
+
+      <h2>23. The students ——- standing up the anthem.</h2>
+      <h4>Answer: Are</h4>
+
+      <h2>24. I ——– like to watch TV. There is a good film on.</h2>
+      <h4>Answer: Should</h4>
+
+      <h2>25. My students ——- a little English.</h2>
+      <h4>Answer: Speak</h4>
+
+      <h2>26. He ——– called me twice this morning.</h2>
+      <h4>Answer: Has</h4>
+
+      <h2>27. Tell me, ——– you coming to the play?</h2>
+      <h4>Answer: Are</h4>
+
+      <h2>28. This museum has got ——- collection of antique objects in the world.</h2>
+      <h4>Answer: Larger</h4>
+
+      <h2>29. He is ——- I thought.</h2>
+      <h4>Answer: Youngest</h4>
+
+      <h2>30. My suitcase is ——- than your suitcase.</h2>
+      <h4>Answer: Larger</h4>
+
+      <h2>31. Mr. Sinha ——- Spanish and French.</h2>
+      <h4>Answer: Teaches</h4>
+
+      <h2>32. Which is the correct sentence?</h2>
+      <h4>Answer: Sarvesh never smiles.</h4>
+
+      <h2>33. Mohan is not such a —— student.</h2>
+      <h4>Answer: Bad</h4>
+
+      <h2>34. ——- big building over there is the parliament.</h2>
+      <h4>Answer: That</h4>
+
+      <h2>35. Which is a correct sentence?</h2>
+      <h4>Answer: She really listens to classical music.</h4>
+
+      <h2>36. I ——- fruit juice very much.</h2>
+      <h4>Answer: Like</h4>
+
+      <h2>37. Which is the correct sentence?</h2>
+      <h4>Answer: I always go jogging in the morning.</h4>
+
+      <h2>38. Please ——- your homework quickly so we can go play.</h2>
+      <h4>Answer: Done</h4>
+
+      <h2>39. —— night the factory was closed so he came home.</h2>
+      <h4>Answer: That</h4>
+
+      <h2>40. What does ——– notice say?</h2>
+      <h4>Answer: That</h4>
+
+      <h2>41. China is —— India.</h2>
+      <h4>Answer: Bigger than</h4>
+
+      <h2>42. Here, take ——- folder and put on it the desk over there.</h2>
+      <h4>Answer: This</h4>
+
+      <h2>43. The Taj was ——- than the Holiday Inn.</h2>
+      <h4>Answer: More expensive</h4>
+
+      <h2>44. Ramji is a ——- gardener than Santosh.</h2>
+      <h4>Answer: Better</h4>
+
+      <h2>45. They are both nice girls but I think Suman is ——- of the two.</h2>
+      <h4>Answer: The nicer</h4>
+
+      <h2>46. Mr. Shah is the ——- man today because he won the lottery.</h2>
+      <h4>Answer: Happiest</h4>
+
+      <h2>47. Fill in the blank with correct option so that this becomes an order. ——- off your mobiles.</h2>
+      <h4>Answer: Switch</h4>
+
+      <h2>48. She ——– playing tennis.</h2>
+      <h4>Answer: Likes</h4>
+
+      <h2>49. Don’t ——- late for school.</h2>
+      <h4>Answer: Be</h4>
+
+      <h2>50. They ——– to buy a house but they haven’t got enough money.</h2>
+      <h4>Answer: Would like</h4>
+
+      <h2>51. You —– dancing, don’t you?</h2>
+      <h4>Answer: Like</h4>
+
+      <h2>52. I —— to eat a pizza tonight.</h2>
+      <h4>Answer: Would like</h4>
+
+      <h2>53. Mike ——– children very much.</h2>
+      <h4>Answer: Likes</h4>
+
+      <h2>54. ——– upstairs.</h2>
+      <h4>Answer: Go</h4>
+
+      <h2>55. Don’t ——- the animals in the zoo.</h2>
+      <h4>Answer: Feed</h4>
+
+      <h2>56. Don’t ——- in this lake.</h2>
+      <h4>Answer: Swim</h4>
+
+      <h2>57. ——– the answers quickly.</h2>
+      <h4>Answer: Write</h4>
+
+      <h2>58. Don’t ——- football in the yard.</h2>
+      <h4>Answer: Play</h4>
+
+      <h2>59. I don’t ———- your tee-shirt, it’s too casual.</h2>
+      <h4>Answer: Like</h4>
+
+
+    </div>
+
+  </div>
+
+</body>
+
+
+<script>
+  // Disable text selection
+document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+});
+
+// Disable right-click
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+// Disable drag events (to prevent dragging content)
+document.addEventListener('dragstart', function(e) {
+    e.preventDefault();
+});
+</script>
+
+</html>
