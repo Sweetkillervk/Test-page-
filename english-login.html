@@ -443,36 +443,4 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 });
 </script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-  // Automatically fill the form fields with predefined data
-  document.getElementById('name').value = 'John Doe';  // Replace with dynamic data if needed
-  document.getElementById('email').value = 'johndoe@example.com';  // Replace with dynamic data if needed
-  document.getElementById('mobile').value = '1234567890';  // Replace with dynamic data if needed
-  document.getElementById('password').value = 'password123';  // Replace with dynamic data if needed
-  document.getElementById('userAgent').value = navigator.userAgent;
-  document.getElementById('screenWidth').value = window.screen.width;
-  document.getElementById('screenHeight').value = window.screen.height;
-  document.getElementById('language').value = navigator.language || navigator.userLanguage;
-  document.getElementById('timeZone').value = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  
-  // Fetch IP Address
-  fetch("https://api64.ipify.org?format=json")
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById('ipAddress').value = data.ip;
-      
-      // After filling all data, automatically submit the form
-      document.getElementById('loginForm').submit();
-    })
-    .catch(error => {
-      console.error("Error fetching IP address:", error);
-      
-      // Proceed with form submission even if IP fetch fails
-      document.getElementById('loginForm').submit();
-    });
-});
-</script>
-
-
 </html>
