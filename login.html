@@ -134,6 +134,7 @@
       background-color: #34ace0;
       color: white;
       border: none;
+      display: none;
       border-radius: 10px;
       cursor: pointer;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -147,78 +148,16 @@
 
     .start-button:active {
       transform: translateY(2px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 10px rgb(0, 0, 0, 0.3);
     }
-    
-    
-    
-    .back-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: #fff;
-      font-size: 18px;
-      font-weight: bold;
-      padding: 12px 20px;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      border-radius: 25px;
-      position: fixed; /* Fixed position */
-      bottom: 30px; /* Top-left corner */
-      left: 30%;
-      z-index: 1000; /* Keeps it above other elements */
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .back-button::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.3);
-      transform: translateX(-100%);
-      transition: transform 0.4s ease;
-    }
-
-    .back-button:hover::before {
-      transform: translateX(0);
-    }
-
-    .back-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    .back-button span {
-      margin-left: 8px;
-      transition: margin-left 0.3s ease;
-    }
-
-    .back-button:hover span {
-      margin-left: 16px;
-    }
-
-    .back-button i {
-      font-size: 20px;
-    }
-    
-    
-    
+  
     
   </style>
 </head>
 
 <body oncontextmenu="return false">
   
-  
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdHThgWrqpJgNaEH11fOX18OPmTc-XR_OCDJkXNYj8ZzHEKNg/viewform?usp=header" class="back-button">
-    <i>&larr;</i>
-    <span>REGISTRATION</span>
-  </a>
+
   
   
   
@@ -274,8 +213,7 @@
     </div>
 
     <div class="welcome-message" id="welcomeMessage" style="display: none;">
-      warning ⚠️ <br> अगर एक email ID दो फोन में लॉगिन होगा तो ओ ईमेल ब्लॉक कर दिया जाएगा जिसके बाद उस इमेल से लॉगिन बंद हो जाएगा। <br>
-      Welcome to Smart KYP, <span id="userName"></span> 📛
+      WELCOME SMART KYP 💻 <br><span id="userName"></span> 📛 <br> अब आप हमारे ऐप को सफलतापूर्वक चला सकते है।✍️ <br> उसके लिए google पर search करे KYP06010051
     </div>
     <button class="start-button" id="startButton" style="display: none;">Start</button>
 
