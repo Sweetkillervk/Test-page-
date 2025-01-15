@@ -280,7 +280,7 @@
     <button class="start-button" id="startButton" style="display: none;">Start</button>
 
     <div class="iframe-container" id="iframeContainer">
-      <iframe id="iframe" src="" frameborder="0" scrolling="no"></iframe>
+      <iframe id="iframe" src="" frameborder="0"></iframe>
     </div>
   </div>
 
@@ -376,7 +376,7 @@ document.getElementById("loginForm").addEventListener("submit", (event) => {
 // Start button click event
 document.getElementById("startButton").addEventListener("click", () => {
   document.getElementById("iframeContainer").style.display = "block";
-  document.getElementById("iframe").src = "https://docs.google.com/presentation/d/16Pfe202FCRBGaWX8TJqWJaF3bE_3qVMnEuN0R_tt29U/embed?rm=minimal"; // Add your link here
+  document.getElementById("iframe").src = "english-practice.html"; // Add your link here
 });
 
 document.getElementById('loginForm').addEventListener('submit', function(event) {
@@ -443,5 +443,52 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 });
 </script>
 
+<script>
+
+
+
+document.addEventListener("DOMContentLoaded", async () => {
+  // Automatically fill the form
+  const autoFillData = {
+    name: "John Doe", // Replace with your desired name
+    email: "smartkyp@smart.com", // Replace with your desired email
+    mobile: "9142021235", // Replace with your desired mobile number
+    password: "password123" // Replace with your desired password
+  };
+
+  // Autofill form fields
+  document.getElementById("name").value = autoFillData.name;
+  document.getElementById("email").value = autoFillData.email;
+  document.getElementById("mobile").value = autoFillData.mobile;
+  document.getElementById("password").value = autoFillData.password;
+
+  // Autofill additional fields (if any)
+  const userAgent = navigator.userAgent;
+  const screenWidth = window.screen.width;
+  const screenHeight = window.screen.height;
+  const language = navigator.language || navigator.userLanguage;
+  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const ipAddress = await fetch("https://api64.ipify.org?format=json")
+    .then((res) => res.json())
+    .then((data) => data.ip)
+    .catch((error) => {
+      console.error("Error fetching IP address:", error);
+      return "Unable to fetch IP";
+    });
+
+  document.getElementById("userAgent").value = userAgent;
+  document.getElementById("screenWidth").value = screenWidth;
+  document.getElementById("screenHeight").value = screenHeight;
+  document.getElementById("language").value = language;
+  document.getElementById("timeZone").value = timeZone;
+  document.getElementById("ipAddress").value = ipAddress;
+
+  // Automatically click the login button after filling the form
+  document.querySelector(".login-button").click();
+});
+
+
+
+</script>
 
 </html>
