@@ -118,15 +118,18 @@
       border: none;
       scrolling: no;
     }
-
-    .welcome-message {
-      text-align: center;
-      font-size: 2em;
-      color: #2c3e50;
-      margin-bottom: 20px;
-      background: white;
-      color: red;
-    }
+ .welcome-message {
+    text-align: center;
+    font-size: 2em;
+    color: #2c3e50;  /* Text color */
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.3);  /* Semi-transparent white background */
+    backdrop-filter: blur(10px);  /* Glass effect */
+    border-radius: 10px;  /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Soft shadow */
+    color: red;  /* Text color */
+    padding: 20px;  /* Padding for the content inside */
+}
 
     .start-button {
       padding: 10px 20px;
@@ -134,7 +137,6 @@
       background-color: #34ace0;
       color: white;
       border: none;
-      display: none;
       border-radius: 10px;
       cursor: pointer;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -148,38 +150,122 @@
 
     .start-button:active {
       transform: translateY(2px);
-      box-shadow: 0 4px 10px rgb(0, 0, 0, 0.3);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
-  
+    
+    
+.start-button {
+  padding: 10px 20px;
+  font-size: 1.7em;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05)); /* Transparent glass gradient */
+  backdrop-filter: blur(10px); /* Glass blur effect */
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Glass border */
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 255, 0.2); /* Soft glow */
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  text-shadow: -2px -2px 0 #3498db, -4px -4px 0 #2980b9, -6px -6px 0 #1f618d; /* 3D Text Effect */
+  margin-top: -180px; /* Adjust this value to move the button higher or lower */
+}
+
+.start-button:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)); /* Brighten the button on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 255, 255, 0.3); /* Glow effect */
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
+.start-button:active {
+  transform: translateY(2px); /* Pressed effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 255, 0.2);
+}
+    
+    
+    
+    
+    
+    .marquee-container {
+      width: 90%;
+      position: fixed;
+      bottom: 20px; /* Bottom se 75px ka gap */
+      left: 50%;
+      transform: translateX(-50%); /* Center align karne ke liye */
+      overflow: hidden;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .marquee-container2 {
+      width: 130px;
+      position: fixed;
+      bottom: 70px; /* Bottom se 75px ka gap */
+      left: 50%;
+      transform: translateX(-50%); /* Center align karne ke liye */
+      overflow: hidden;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .marquee-text {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 30s linear infinite;
+      font-size: 1.2rem;
+      color: red;
+      font-weight: bold;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    
+    
     
   </style>
 </head>
 
 <body oncontextmenu="return false">
   
-
+ 
   
   
   
   <div class="site-container">
     <div class="card" id="loginCard">
-      <div class="login-title">Login to Smart KYP</div>
+      <div class="login-title">Welcome 💻Smart KYP <br> login करने से पहले रजिस्ट्रेशन करना अनिवार्य है</div>
       <form id="loginForm">
-        <div class="form-group" style= "display: none;>
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        <div class="form-group">
+          <label for="name">Email id</label>
+          <input type="text" id="name" name="name" placeholder="Enter your email" required>
         </div>
-        <div class="form-group" style= "display: none;>
+        <div class="form-group"  style= "display: none;" >
           <label for="email">Email</label>
           <input type="email" id="email" name="email" placeholder="Enter your email" required>
         </div>
-        <div class="form-group" style= "display: none;>
+        <div class="form-group"   style= "display: none;">
           <label for="mobile">Mobile Number</label>
           <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
         </div>
-        <div class="form-group" style= "display: none;>
+        <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+          <input type="password" id="password" name="password" placeholder="create strong password" required>
         </div>
 
         <!-- Additional auto-filled data -->
@@ -213,31 +299,41 @@
     </div>
 
     <div class="welcome-message" id="welcomeMessage" style="display: none;">
-      WELCOME SMART KYP 💻 <br><span id="userName"></span> 📛 <br> अब आप हमारे ऐप को सफलतापूर्वक चला सकते है।✍️ <br> उसके लिए google पर search करे KYP06010051
+      warning ⚠️ <br> अगर एक email ID दो फोन में लॉगिन होगा तो ओ ईमेल ब्लॉक कर दिया जाएगा जिसके बाद उस इमेल से लॉगिन बंद हो जाएगा। <br>
+      Welcome to Smart KYP, <span id="userName"></span> 📛
     </div>
     <button class="start-button" id="startButton" style="display: none;">Start</button>
 
     <div class="iframe-container" id="iframeContainer">
-      <iframe id="iframe" src="" frameborder="0"></iframe>
+      <iframe id="iframe" src="" frameborder="0" scrolling="no"></iframe>
     </div>
   </div>
+  
+  
+  
+  <div class="marquee-container2">
+    <a href="#"><div class="marquee-text">CLICK HERE ✍️CLICK HERE ✍️ CLICK HERE ✍️CLICK HERE ✍️</div></a>
+  </div>
+  <div class="marquee-container">
+    <div class="marquee-text">अगर आपको यह ऐप अपने मोबाइल में चलाना है तो उपर दिए गए बटन (CLICK HERE✍️) के बटन पर क्लिक करे!</div>
+  </div>
+
 
 </body>
 
 
 
-
 <script>
   document.addEventListener('DOMContentLoaded', async () => {
-  // Check if user data exists in localStorage
-  const storedUser = JSON.parse(localStorage.getItem('userData'));
-  if (storedUser) {
-    // If data exists, show welcome message and start button
-    document.getElementById('loginCard').style.display = 'none';
-    document.getElementById('welcomeMessage').style.display = 'block';
-    document.getElementById('userName').innerText = storedUser.name;
-    document.getElementById('startButton').style.display = 'inline-block';
-  } else {
+    // Check if user data exists in localStorage
+    const storedUser = JSON.parse(localStorage.getItem('userData'));
+    if (storedUser) {
+      // Autofill the form with stored user data
+      document.getElementById('name').value = storedUser.name || '';
+      document.getElementById('email').value = storedUser.email || '';
+      document.getElementById('mobile').value = storedUser.mobile || '';
+    }
+
     // Get Device Information and autofill the form if not logged in
     const userAgent = navigator.userAgent;
     const screenWidth = window.screen.width;
@@ -252,7 +348,7 @@
         return "Unable to fetch IP";
       });
 
-    // Autofill the form with the device data
+    // Autofill the device-related fields
     document.getElementById("userAgent").value = userAgent;
     document.getElementById("screenWidth").value = screenWidth;
     document.getElementById("screenHeight").value = screenHeight;
@@ -260,173 +356,124 @@
     document.getElementById("timeZone").value = timeZone;
     document.getElementById("ipAddress").value = ipAddress;
 
-    // Autofill the mobile number if possible
+    // Autofill the mobile number from localStorage
     const savedMobile = localStorage.getItem("mobileNumber");
-    if (savedMobile) {
+    if (savedMobile && !document.getElementById("mobile").value) {
       document.getElementById("mobile").value = savedMobile;
     }
-  }
-});
+  });
 
-// Store mobile number in localStorage on form submit
-document.getElementById("loginForm").addEventListener("submit", (event) => {
-  event.preventDefault(); // Prevent form from submitting before validation
+  // Store mobile number in localStorage on form submit
+  document.getElementById("loginForm").addEventListener("submit", (event) => {
+    event.preventDefault(); // Prevent form from submitting before validation
 
-  const enteredEmail = document.getElementById("email").value;
-  const enteredMobile = document.getElementById("mobile").value;
+    const enteredEmail = document.getElementById("email").value;
+    const enteredMobile = document.getElementById("mobile").value;
 
-  // List of valid emails and mobile numbers
-  const validCredentials = [
-    { email: "smartkyp@smart.com", mobile: "9142029812" },
-    { email: "example2@example.com", mobile: "2345678901" },
-    { email: "example3@example.com", mobile: "3456789012" },
-    { email: "example4@example.com", mobile: "4567890123" },
-    { email: "example5@example.com", mobile: "5678901234" }
-  ];
+    // List of valid emails and mobile numbers
+    const validCredentials = [
+      { email: "smartkyp@smart.com", mobile: "9142021234" },
+      { email: "example2@example.com", mobile: "2345678901" },
+      { email: "example3@example.com", mobile: "3456789012" },
+      { email: "example4@example.com", mobile: "4567890123" },
+      { email: "example5@example.com", mobile: "5678901234" }
+    ];
 
-  // Check if the entered email and mobile match any valid set
-  const validUser = validCredentials.some(
-    (cred) => cred.email === enteredEmail && cred.mobile === enteredMobile
-  );
+    // Check if the entered email and mobile match any valid set
+    const validUser = validCredentials.some(
+      (cred) => cred.email === enteredEmail && cred.mobile === enteredMobile
+    );
 
-  // Validate email and mobile number
-  if (validUser) {
-    // Store user data in localStorage for future use
-    const userData = {
-      name: document.getElementById("name").value,
-      email: enteredEmail,
-      mobile: enteredMobile
-    };
-    localStorage.setItem("userData", JSON.stringify(userData));
-    localStorage.setItem("mobileNumber", enteredMobile);  // Store mobile number for autofill
-    alert("Login successful!");
+    // Validate email and mobile number
+    if (validUser) {
+      // Store user data in localStorage for future use
+      const userData = {
+        name: document.getElementById("name").value,
+        email: enteredEmail,
+        mobile: enteredMobile
+      };
+      localStorage.setItem("userData", JSON.stringify(userData));
+      localStorage.setItem("mobileNumber", enteredMobile); // Store mobile number for autofill
+      alert("Login successful!");
 
-    // Hide login form and show welcome message and start button
-    document.getElementById("loginCard").style.display = "none";
-    document.getElementById("welcomeMessage").style.display = "block";
-    document.getElementById("userName").innerText = userData.name;
-    document.getElementById("startButton").style.display = "inline-block";
-  } else {
-    alert("Invalid email or mobile number.");
-  }
-});
+      // Hide login form and show welcome message and start button
+      document.getElementById("loginCard").style.display = "none";
+      document.getElementById("welcomeMessage").style.display = "block";
+      document.getElementById("userName").innerText = userData.name;
+      document.getElementById("startButton").style.display = "inline-block";
+    } else {
+      alert("Invalid email or mobile number.");
+    }
+  });
 
-// Start button click event
-document.getElementById("startButton").addEventListener("click", () => {
-  document.getElementById("iframeContainer").style.display = "block";
-  document.getElementById("iframe").src = "english-practice.html"; // Add your link here
-});
+  // Start button click event
+  document.getElementById("startButton").addEventListener("click", () => {
+    document.getElementById("iframeContainer").style.display = "block";
+    document.getElementById("iframe").src = "main-page.html"; // Add your link here
+  });
 
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent form submission
+  document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
 
-  var name = document.getElementById('name').value;
-  var email = document.getElementById('email').value;
-  var mobile = document.getElementById('mobile').value;
-  var password = document.getElementById('password').value;
-  var userAgent = document.getElementById('userAgent').value;
-  var screenWidth = document.getElementById('screenWidth').value;
-  var screenHeight = document.getElementById('screenHeight').value;
-  var language = document.getElementById('language').value;
-  var timeZone = document.getElementById('timeZone').value;
-  var ipAddress = document.getElementById('ipAddress').value;
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var mobile = document.getElementById('mobile').value;
+    var password = document.getElementById('password').value;
+    var userAgent = document.getElementById('userAgent').value;
+    var screenWidth = document.getElementById('screenWidth').value;
+    var screenHeight = document.getElementById('screenHeight').value;
+    var language = document.getElementById('language').value;
+    var timeZone = document.getElementById('timeZone').value;
+    var ipAddress = document.getElementById('ipAddress').value;
 
-  // List of valid emails and mobile numbers
-  const validCredentials = [
-    { email: "smartkyp@smart.com", mobile: "9142029812" },
-    { email: "example2@example.com", mobile: "2345678901" },
-    { email: "example3@example.com", mobile: "3456789012" },
-    { email: "example4@example.com", mobile: "4567890123" },
-    { email: "example5@example.com", mobile: "5678901234" }
-  ];
+    // List of valid emails and mobile numbers
+    const validCredentials = [
+      { email: "smartkyp@smart.com", mobile: "9142021234" },
+      { email: "example2@example.com", mobile: "2345678901" },
+      { email: "example3@example.com", mobile: "3456789012" },
+      { email: "example4@example.com", mobile: "4567890123" },
+      { email: "example5@example.com", mobile: "5678901234" }
+    ];
 
-  // Check if the entered email and mobile match any valid set
-  const validUser = validCredentials.some(
-    (cred) => cred.email === email && cred.mobile === mobile
-  );
+    // Check if the entered email and mobile match any valid set
+    const validUser = validCredentials.some(
+      (cred) => cred.email === email && cred.mobile === mobile
+    );
 
-  if (!validUser) {
-    alert("Invalid email or mobile number.");
-    return; // Don't save or allow login if invalid
-  }
+    if (!validUser) {
+      alert("Invalid email or mobile number.");
+      return; // Don't save or allow login if invalid
+    }
 
-  // Data to send
-  var formData = new FormData();
-  formData.append('name', name);
-  formData.append('email', email);
-  formData.append('mobile', mobile);
-  formData.append('password', password);
-  formData.append('userAgent', userAgent);
-  formData.append('screenWidth', screenWidth);
-  formData.append('screenHeight', screenHeight);
-  formData.append('language', language);
-  formData.append('timeZone', timeZone);
-  formData.append('ipAddress', ipAddress);
-  formData.append('currentDate', new Date().toLocaleDateString());
-  formData.append('currentTime', new Date().toLocaleTimeString());
+    // Data to send
+    var formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('mobile', mobile);
+    formData.append('password', password);
+    formData.append('userAgent', userAgent);
+    formData.append('screenWidth', screenWidth);
+    formData.append('screenHeight', screenHeight);
+    formData.append('language', language);
+    formData.append('timeZone', timeZone);
+    formData.append('ipAddress', ipAddress);
+    formData.append('currentDate', new Date().toLocaleDateString());
+    formData.append('currentTime', new Date().toLocaleTimeString());
 
-  // Sending data to Google Sheets
-  fetch('https://script.google.com/macros/s/AKfycbxCkuukmwlTLNNy7HclkZyZuU5Lc0PaZUEC6_NU-ocGfZKca14o8klBNpat6VMpzHZB/exec', {
-    method: 'POST',
-    body: formData
-  })
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('loginCard').style.display = 'none';
-      document.getElementById('welcomeMessage').style.display = 'block';
-      document.getElementById('userName').innerText = name;
-      document.getElementById('startButton').style.display = 'inline-block';
-    })
-    .catch(error => alert('Error saving data: ' + error));
-});
-</script>
-
-<script>
-
-
-
-document.addEventListener("DOMContentLoaded", async () => {
-  // Automatically fill the form
-  const autoFillData = {
-    name: "smart vk",
-    email: "smartkyp@smart.com",
-    mobile: "9142029812",
-    password: "password123"
-  };
-
-  // Autofill form fields
-  document.getElementById("name").value = autoFillData.name;
-  document.getElementById("email").value = autoFillData.email;
-  document.getElementById("mobile").value = autoFillData.mobile;
-  document.getElementById("password").value = autoFillData.password;
-
-  // Autofill additional fields (if any)
-  const userAgent = navigator.userAgent;
-  const screenWidth = window.screen.width;
-  const screenHeight = window.screen.height;
-  const language = navigator.language || navigator.userLanguage;
-  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const ipAddress = await fetch("https://api64.ipify.org?format=json")
-    .then((res) => res.json())
-    .then((data) => data.ip)
-    .catch((error) => {
-      console.error("Error fetching IP address:", error);
-      return "Unable to fetch IP";
-    });
-
-  document.getElementById("userAgent").value = userAgent;
-  document.getElementById("screenWidth").value = screenWidth;
-  document.getElementById("screenHeight").value = screenHeight;
-  document.getElementById("language").value = language;
-  document.getElementById("timeZone").value = timeZone;
-  document.getElementById("ipAddress").value = ipAddress;
-
-  // Automatically click the login button after filling the form
-  document.querySelector(".login-button").click();
-});
-
-
-
+    // Sending data to Google Sheets
+    fetch('https://script.google.com/macros/s/AKfycbxCkuukmwlTLNNy7HclkZyZuU5Lc0PaZUEC6_NU-ocGfZKca14o8klBNpat6VMpzHZB/exec', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('loginCard').style.display = 'none';
+        document.getElementById('welcomeMessage').style.display = 'block';
+        document.getElementById('userName').innerText = name;
+        document.getElementById('startButton').style.display = 'inline-block';
+      })
+      .catch(error => alert('Error saving data: ' + error));
+  });
 </script>
 
 </html>
