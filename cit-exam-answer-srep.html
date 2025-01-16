@@ -126,10 +126,68 @@
     .back-button i {
       font-size: 20px;
     }
-  </style>
   
   
 </style>
+
+
+
+  
+  
+  <style>
+
+
+    .marquee-container {
+      width: 90%;
+      position: fixed;
+      bottom: 20px; /* Bottom se 75px ka gap */
+      left: 50%;
+      transform: translateX(-50%); /* Center align karne ke liye */
+      overflow: hidden;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .marquee-container2 {
+      width: 130px;
+      position: fixed;
+      bottom: 70px; /* Bottom se 75px ka gap */
+      left: 50%;
+      transform: translateX(-50%); /* Center align karne ke liye */
+      overflow: hidden;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .marquee-text {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 30s linear infinite;
+      font-size: 1.2rem;
+      color: red;
+      font-weight: bold;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
 
 <body oncontextmenu="return false">
   
@@ -762,6 +820,23 @@
       </div>
     </div>
   </div>
+
+
+
+
+
+  <div class="marquee-container2">
+    <a href="https://sweetkillervk.github.io/Test-page-/registration-form.html"><div class="marquee-text">CLICK HERE ✍️CLICK HERE ✍️ CLICK HERE ✍️CLICK HERE ✍️</div></a>
+  </div>
+  <div class="marquee-container">
+    <div class="marquee-text">अगर आपको यह ऐप अपने मोबाइल में चलाना है तो उपर दिए गए बटन (CLICK HERE✍️) के बटन पर क्लिक करे!</div>
+  </div>
+
+
+
+
+
+
 
  <script>
    // Disable text copying via keyboard shortcuts
