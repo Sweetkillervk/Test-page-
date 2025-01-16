@@ -119,106 +119,119 @@
       scrolling: no;
     }
 
-    .welcome-message {
-      text-align: center;
-      font-size: 2em;
-      color: #2c3e50;
-      margin-bottom: 20px;
-      background: white;
-      color: red;
-    }
-
+    
+    
     .start-button {
-      padding: 10px 20px;
-      font-size: 1.2em;
-      background-color: #34ace0;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
+padding: 10px 20px;
+font-size: 1.7em;
+font-weight: bold;
+color: white;
+background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05)); /* Transparent glass gradient */
+backdrop-filter: blur(10px); /* Glass blur effect */
+border: 2px solid rgba(255, 255, 255, 0.3); /* Glass border */
+border-radius: 10px;
+cursor: pointer;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 255, 0.2); /* Soft glow */
+transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+text-shadow: -2px -2px 0 #3498db, -4px -4px 0 #2980b9, -6px -6px 0 #1f618d; /* 3D Text Effect */
+margin-top: -202px; /* Adjust this value to move the button higher or lower */
+}
 
-    .start-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-    }
+.start-button:hover {
+background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)); /* Brighten the button on hover */
+box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 255, 255, 0.3); /* Glow effect */
+transform: translateY(-3px); /* Slight lift effect */
+}
 
-    .start-button:active {
-      transform: translateY(2px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-    
-    
-    
-    .back-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: #fff;
-      font-size: 18px;
-      font-weight: bold;
-      padding: 12px 20px;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      border-radius: 25px;
-      position: fixed; /* Fixed position */
-      bottom: 30px; /* Top-left corner */
-      left: 30%;
-      z-index: 1000; /* Keeps it above other elements */
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+.start-button:active {
+transform: translateY(2px); /* Pressed effect */
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 255, 0.2);
+}
 
-    .back-button::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.3);
-      transform: translateX(-100%);
-      transition: transform 0.4s ease;
-    }
 
-    .back-button:hover::before {
-      transform: translateX(0);
-    }
 
-    .back-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    }
 
-    .back-button span {
-      margin-left: 8px;
-      transition: margin-left 0.3s ease;
-    }
 
-    .back-button:hover span {
-      margin-left: 16px;
-    }
+.welcome-message {
+    text-align: center;
+    font-size: 1.5em;
+    color: #2c3e50;  /* Text color */
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.3);  /* Semi-transparent white background */
+    backdrop-filter: blur(10px);  /* Glass effect */
+    border-radius: 10px;  /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Soft shadow */
+    color: red;  /* Text color */
+    padding: 20px;  /* Padding for the content inside */
+}
 
-    .back-button i {
-      font-size: 20px;
-    }
     
     
     
     
   </style>
+  
+  
+  
+  
+  
+  <style>
+
+
+    .marquee-container {
+      width: 300px;
+      position: fixed;
+      bottom: 20px; /* Bottom se 75px ka gap */
+      left: 50%;
+      transform: translateX(-50%); /* Center align karne ke liye */
+      overflow: hidden;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .marquee-container2 {
+      width: 130px;
+      position: fixed;
+      bottom: 70px; /* Bottom se 75px ka gap */
+      left: 50%;
+      transform: translateX(-50%); /* Center align karne ke liye */
+      overflow: hidden;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .marquee-text {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 30s linear infinite;
+      font-size: 1.2rem;
+      color: red;
+      font-weight: bold;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
 </head>
 
 <body oncontextmenu="return false">
-  
-  
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdHThgWrqpJgNaEH11fOX18OPmTc-XR_OCDJkXNYj8ZzHEKNg/viewform?usp=header" class="back-button">
-    <i>&larr;</i>
-    <span>REGISTRATION</span>
-  </a>
   
   
   
@@ -283,6 +296,17 @@
       <iframe id="iframe" src="" frameborder="0" scrolling="no"></iframe>
     </div>
   </div>
+
+
+
+  <div class="marquee-container2">
+    <a href="https://sweetkillervk.github.io/Test-page-/registration-form.html"><div class="marquee-text">CLICK HERE ✍️CLICK HERE ✍️ CLICK HERE ✍️CLICK HERE ✍️</div></a>
+  </div>
+  <div class="marquee-container">
+    <div class="marquee-text">अगर आपको यह ऐप अपने मोबाइल में चलाना है तो उपर दिए गए बटन (CLICK HERE✍️) के बटन पर क्लिक करे!</div>
+  </div>
+
+
 
 </body>
 
