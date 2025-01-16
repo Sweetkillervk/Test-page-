@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Page</title>
+  <style>
+    :root {
+      font-size: 125%;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      margin: 0;
+      color: #224;
+      background: url(https://i.ibb.co/Qjt7TJn/milad-fakurian-E8-Ufcyxz514-unsplash-1.jpg) center / cover no-repeat fixed;
+    }
+
+    .site-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 1.5em;
+    }
+
+    .welcome-card {
+      width: 500px;
+      height: 350px;
+      perspective: 1000px;
+    }
+
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+
+    .card-inner.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.25);
+    }
+
+    .card-front {
+      background-color: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(15px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-back {
+      background: rgba(0, 0, 0, 0.7);
+      transform: rotateY(180deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 5%;
+      border-radius: 20px;
+      box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.25);
+    }
+
+    .card-back img {
+      width: 80%; /* Image occupies 80% of the width of the card */
+      height: auto; /* Maintain aspect ratio */
+      object-fit: cover; /* Ensure the image covers the 80% width */
+      margin: 10%; /* Leave space around the image */
+      border-radius: 10px; /* Optional: rounded corners for the image */
+    }
+
+    .welcome-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 15px;
+      color: white;
+      text-shadow: -2px -2px 0 #3498db, -4px -4px 0 #2980b9, -6px -6px 0 #1f618d;
+    }
+
+    .warning-message {
+      width: 90%;
+      font-size: 1em;
+      color: red;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.3);
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .button {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    }
+
+    .button:hover {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 255, 255, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .button:active {
+      transform: translateY(2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .button2 {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: white;
+      position: absolute;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    }
+
+    .button2:hover {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 255, 255, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .button2:active {
+      transform: translateY(2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+
+<body oncontextmenu="return false">
+  <div class="site-container">
+    <div class="welcome-card">
+      <div class="card-inner" id="cardInner">
+        <div class="card-face card-front">
+          <div class="welcome-title">Welcome to Smart KYP</div>
+          <div class="warning-message">
+            इसमें आपको एक रजिस्ट्रेशन फॉर्म भरना पड़ेगा जिसके बाद आपके पास इस एप को चलाने के लिए लिंक भेज दिया जाएगा। <br /> 
+            नोट:- फॉर्म में सभी जानकारी को सही से भरना है।
+          </div>
+          <button class="button" onclick="flipCard()">Registration Form</button>
+        </div>
+        <div class="card-face card-back">
+          <img src="form_qr.jpg" alt="Image" />
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdHThgWrqpJgNaEH11fOX18OPmTc-XR_OCDJkXNYj8ZzHEKNg/viewform?usp=header" class="button2">Fill FORM ✍️</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function flipCard() {
+      document.getElementById("cardInner").classList.add("flipped");
+    }
+  </script>
+</body>
+
+</html>
