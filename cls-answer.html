@@ -186,7 +186,59 @@
     }
   
   
+    .search-box {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
   
+  
+  
+  
+  
+  
+ #searchBox {
+    width: 98%;
+    max-width: 400px; /* Keeps it responsive */
+    padding: 12px 15px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.2); /* Glass effect */
+    backdrop-filter: blur(10px); /* Soft blur */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    color: #333;
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+}
+
+#searchBox::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    font-style: italic;
+}
+
+#searchBox:focus {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+  
+
+
+
+
+
+
+
   
 </style>
 
@@ -196,10 +248,10 @@
   
   
   
-  <a href="main-page.html" class="back-button">
+  <!-- <a href="main-page.html" class="back-button">
     <i>&larr;</i>
     <span>Go Back</span>
-  </a>
+  </a> -->
   
   
   
@@ -207,6 +259,11 @@
   <div class="site-container">
 
     <div class="card">
+      
+      <input type="text" id="searchBox" placeholder="Search..."
+      
+      
+      
       <h2>1. It ——- at 9:00 in the evening.</h2>
       <h4>Answer: Closes</h4>
 
@@ -422,5 +479,28 @@ document.addEventListener('dragstart', function(e) {
     e.preventDefault();
 });
 </script>
+
+
+
+<script>
+  document.getElementById("searchBox").addEventListener("input", function() {
+    let query = this.value.toLowerCase().trim();
+    let allQuestions = document.querySelectorAll("h2"); // Sabhi h2 (questions) ko select karega
+
+    allQuestions.forEach((question) => {
+      let answer = question.nextElementSibling; // H2 ke just baad ka H4 (answer)
+      let text = question.textContent.toLowerCase();
+
+      if (query === "" || text.includes(query)) {
+        question.style.display = "block"; // Agar search match kare, toh show karo
+        answer.style.display = "block";
+      } else {
+        question.style.display = "none"; // Nahi toh hide karo
+        answer.style.display = "none";
+      }
+    });
+  });
+</script> 
+
 
 </html>
