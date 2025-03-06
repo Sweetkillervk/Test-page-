@@ -133,61 +133,33 @@
   
   
   
-    .back-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: #fff;
-      font-size: 18px;
-      font-weight: bold;
-      padding: 12px 20px;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      border-radius: 25px;
-      position: fixed; /* Fixed position */
-      top: 10px; /* Top-left corner */
-      left: 10px;
-      z-index: 1000; /* Keeps it above other elements */
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+ #searchBox {
+    width: 98%;
+    max-width: 400px; /* Keeps it responsive */
+    padding: 12px 15px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.2); /* Glass effect */
+    backdrop-filter: blur(10px); /* Soft blur */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    color: #333;
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+}
 
-    .back-button::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.3);
-      transform: translateX(-100%);
-      transition: transform 0.4s ease;
-    }
+#searchBox::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    font-style: italic;
+}
 
-    .back-button:hover::before {
-      transform: translateX(0);
-    }
-
-    .back-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    .back-button span {
-      margin-left: 8px;
-      transition: margin-left 0.3s ease;
-    }
-
-    .back-button:hover span {
-      margin-left: 16px;
-    }
-
-    .back-button i {
-      font-size: 20px;
-    }
-  
-  
+#searchBox:focus {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
   
   
 </style>
@@ -199,15 +171,15 @@
   
 
   
-  <a href="main-page.html" class="back-button">
-    <i>&larr;</i>
-    <span>Go Back</span>
-  </a>
   
 
   <div class="site-container">
 
     <div class="card">
+      
+      
+<input type="text" id="searchBox" placeholder="Search..."
+      
       <h2>Ashok speaks well but doesn't want to express himself in a group. This means-----</h2>
       <h4>Answer: He needs to work on interpersonal skills and confidence.</h4>
 
@@ -444,5 +416,32 @@ document.addEventListener('dragstart', function(e) {
     e.preventDefault();
 });
 </script>
+
+
+
+
+
+
+
+
+<script>
+  document.getElementById("searchBox").addEventListener("input", function() {
+    let query = this.value.toLowerCase().trim();
+    let allQuestions = document.querySelectorAll("h2"); // Sabhi h2 (questions) ko select karega
+
+    allQuestions.forEach((question) => {
+      let answer = question.nextElementSibling; // H2 ke just baad ka H4 (answer)
+      let text = question.textContent.toLowerCase();
+
+      if (query === "" || text.includes(query)) {
+        question.style.display = "block"; // Agar search match kare, toh show karo
+        answer.style.display = "block";
+      } else {
+        question.style.display = "none"; // Nahi toh hide karo
+        answer.style.display = "none";
+      }
+    });
+  });
+</script> 
 
 </html>
