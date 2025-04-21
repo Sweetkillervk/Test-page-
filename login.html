@@ -386,7 +386,7 @@ document.getElementById("loginForm").addEventListener("submit", (event) => {
     document.getElementById("userName").innerText = userData.name;
     document.getElementById("startButton").style.display = "inline-block";
   } else {
-    alert("Invalid email or mobile number.");
+    alert("Invalida username or password");
   }
 });
 
@@ -425,7 +425,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
   );
 
   if (!validUser) {
-    alert("Invalid Id or password");
+    alert("Invalid username or password");
     return; // Don't save or allow login if invalid
   }
 
